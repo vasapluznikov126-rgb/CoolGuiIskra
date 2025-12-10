@@ -1,0 +1,1585 @@
+
+--[[
+	Im finally decided to add logs in gui soooo let me tell you Changes
+    -Now You will have cape name "OldPolychromia(or smth)" because it had other name
+    -You can finally use dex again because somehow way it got broken so yea i decided to fix this
+]]
+
+
+
+if game.PlaceId == 8573962925 then
+
+local model = game:GetObjects("rbxassetid://9795791474")[1]
+model.Parent = game.Workspace
+model.Name = "NMM"
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Iskra's Cool Gui", "DarkTheme")
+
+--Main
+local Main = Window:NewTab("Skins")
+local SkinsAsgoreSection = Main:NewSection("Asgore")
+SkinsAsgoreSection:NewButton("ColorAsgore", "Reset to use", function()
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+game.Players.LocalPlayer.Skins.Asgore.XA.Value = true
+game.Players.LocalPlayer.Skins.Asgore.Value = "XA"
+game.ReplicatedStorage.Char:FireServer("Asgore", "")
+wait(2.5)
+
+local Spear = game.Players.LocalPlayer.Character.Spear
+
+local SpearMesh = game.Players.LocalPlayer.Character.Spear.Spear
+SpearMesh.Color = Color3.fromRGB(255, 255, 0)
+
+local Attach = game.Players.LocalPlayer.Character.Spear.Spear.Attachment
+local Burst = game.Players.LocalPlayer.Character.Spear.Spear.Attachment:FindFirstChild("Burst")
+local Fire = game.Players.LocalPlayer.Character.Spear.Spear.Attachment:FindFirstChild("Fire")
+local FireBlast = game.Players.LocalPlayer.Character.Spear.Spear.Attachment:FindFirstChild("FireBlast")
+
+local Fire1 = game.Players.LocalPlayer.Character.Spear.Spear.Fire
+local FirePerm = game.Players.LocalPlayer.Character.Spear.Spear.FirePerm
+local FirePerm2 = game.Players.LocalPlayer.Character.Spear.Spear.FirePerm2
+local FireWall = game.Players.LocalPlayer.Character.Spear.Spear.FireWall
+
+local Trial1 = game.Players.LocalPlayer.Character.Spear.Spear.Trail1
+local Trial2 = game.Players.LocalPlayer.Character.Spear.Spear.Trail2
+
+local Trial3 = Instance.new("Trail")
+Trial3.Parent = game.Players.LocalPlayer.Character.Spear.Spear
+Trial3.Name = "Trail3"
+Trial3.Texture = "rbxassetid://11607034253"
+Trial3.TextureLength = 33
+Trial3.LightEmission = 1
+Trial3.Brightness = 10
+Trial3.Lifetime = 0.2
+Trial3.MaxLength = 0
+Trial3.MinLength = 0.11
+Trial3.WidthScale = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 1),
+    NumberSequenceKeypoint.new(1, 0)
+})
+Trial3.Attachment0 = game.Players.LocalPlayer.Character.Spear.Spear["2"]
+Trial3.Attachment1 = game.Players.LocalPlayer.Character.Spear.Spear["1"]
+
+local Main = game.Players.LocalPlayer.Character.Spear.Main
+local HighLight = game.Players.LocalPlayer.Character.Spear.Spear.Highlight
+HighLight.Enabled = true
+HighLight.OutlineColor = Color3.fromRGB(0, 0, 255)
+
+Burst.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+Fire.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+Fire1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+FirePerm.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+FirePerm2.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+FireWall.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+
+
+Trial1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+
+Trial2.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+Trial3.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+
+Trial1.Enabled = true
+Trial2.Enabled = true
+Trial3.Enabled = true
+
+local Music = Instance.new("Sound")
+Music.Parent = game.Players.LocalPlayer.Character.Torso
+Music.SoundId = "rbxassetid://11883539179"
+Music.Looped = true
+Music.Volume = 1
+Music.TimePosition = 0
+Music.PlaybackSpeed = 1
+Music.Playing = true
+Music.Name = "Theme"
+Music.RollOffMaxDistance = 100000000000000
+
+end)
+local SkinsSansSection = Main:NewSection("Sans")
+SkinsSansSection:NewButton("LastBreathPhase2", "Reset to use", function()
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+game.Players.LocalPlayer.Skins.Sans.LBP2.Value = true
+game.Players.LocalPlayer.Skins.Sans.Value = "LBP2"
+game.ReplicatedStorage.Char:FireServer("Sans", "")
+wait(1)
+
+local Model = Instance.new("Model")
+Model.Parent = game.Players.LocalPlayer.Character
+Model.Name = "Skin"
+
+local Bone = Instance.new("Part")
+Bone.Parent = game.Players.LocalPlayer.Character.Skin
+Bone.Name = "Bone"
+Bone.CanCollide = false
+Bone.Color = Color3.fromRGB(248, 248, 248)
+
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Skin.Bone
+SpecialMesh.Name = "MeshForBone"
+SpecialMesh.MeshId = "rbxassetid://465130937"
+SpecialMesh.Scale = Vector3.new(0.01, 0.025, 0.01)
+SpecialMesh.Offset = Vector3.new(0, 0, -0.9)
+
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Skin
+BoneStatic.Name = "BoneStatic"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+local Weld1 = Instance.new("Motor6D")
+local Weld2 = Instance.new("Motor6D")
+Weld1.Name = "HandConnect"
+Weld2.Name = "BoneConnect"
+Weld1.Parent = game.Players.LocalPlayer.Character.Skin.BoneStatic
+Weld2.Parent = game.Players.LocalPlayer.Character.Skin.BoneStatic
+Weld1.Part0 = game.Players.LocalPlayer.Character["Right Arm"]
+Weld2.Part0 = game.Players.LocalPlayer.Character["Right Arm"]
+Weld1.Part1 = game.Players.LocalPlayer.Character.Skin["Bone"]
+Weld2.Part1 = game.Players.LocalPlayer.Character.Skin["BoneStatic"]
+Weld1.C0 = CFrame.Angles(math.rad(-115), 0, 0)
+
+
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            local char = game.Players.LocalPlayer.Character
+			if char then
+            local bone = char:FindFirstChild("Bone")
+            if bone then
+                bone:Destroy()
+            end
+        end
+    end
+end)
+
+end)
+SkinsSansSection:NewButton("LastBreathPhase3", "Reset to use", function()
+	game.Players.LocalPlayer.Skins.Sans.LBP3.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "LBP3"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+end)
+SkinsSansSection:NewButton("DustSas", "DustyTrusty", function()
+	game.Players.LocalPlayer.Skins.Sans.DusttaleSans.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "DusttaleSans"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+end)
+SkinsSansSection:NewButton("ColorSans", "Reset to use", function()
+	game.Players.LocalPlayer.Skins.Sans.NMSans.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "NMSans"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+    wait(1)
+
+
+local attach = Instance.new("Attachment")
+attach.Parent = workspace.sanssuperduper.Head
+attach.Name = "Attach"
+
+
+local clonedAura = Instance.new("ParticleEmitter")
+clonedAura.Parent = workspace.sanssuperduper.Head.Attach
+clonedAura.Name = "Flame"
+clonedAura.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura.LightEmission = 1
+clonedAura.Texture = "rbxassetid://12077615395"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura.ZOffset = -0.5
+clonedAura.Acceleration = Vector3.new(0, 36, 0)
+clonedAura.Drag = 5
+clonedAura.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura.Rate = 40
+clonedAura.LockedToPart = true
+clonedAura.Rotation = NumberRange.new(-180, 180)
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura.Speed = NumberRange.new(3.6, 3.6)
+
+clonedAura.SpreadAngle = Vector2.new(360, 360)
+clonedAura.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromHSV(0, 1, 1)),          -- Красный
+    ColorSequenceKeypoint.new(0.2, Color3.fromHSV(0.1, 1, 1)),     -- Оранжевый
+    ColorSequenceKeypoint.new(0.4, Color3.fromHSV(0.15, 1, 1)),    -- Желтый
+    ColorSequenceKeypoint.new(0.6, Color3.fromHSV(0.3, 1, 1)),     -- Зеленый
+    ColorSequenceKeypoint.new(0.8, Color3.fromHSV(0.7, 1, 1)),     -- Синий
+    ColorSequenceKeypoint.new(1, Color3.fromHSV(0.8, 1, 1))        -- Фиолетовый
+})
+
+local clonedAura1 = Instance.new("ParticleEmitter")
+clonedAura1.Parent = workspace.sanssuperduper.Head.Attach
+clonedAura1.Name = "Flame2"
+clonedAura1.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura1.LightEmission = 1
+clonedAura1.Texture = "rbxassetid://15484052560"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura1.ZOffset = -0.5
+clonedAura1.Acceleration = Vector3.new(0, 36, 0)
+clonedAura1.Drag = 5
+clonedAura1.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura1.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura1.TimeScale = 0.5
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura1.Speed = NumberRange.new(3.6, 3.6)
+clonedAura1.LockedToPart = true
+
+clonedAura1.SpreadAngle = Vector2.new(360, 360)
+clonedAura1.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura1.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromHSV(0, 1, 1)),          -- Красный
+    ColorSequenceKeypoint.new(0.2, Color3.fromHSV(0.1, 1, 1)),     -- Оранжевый
+    ColorSequenceKeypoint.new(0.4, Color3.fromHSV(0.15, 1, 1)),    -- Желтый
+    ColorSequenceKeypoint.new(0.6, Color3.fromHSV(0.3, 1, 1)),     -- Зеленый
+    ColorSequenceKeypoint.new(0.8, Color3.fromHSV(0.7, 1, 1)),     -- Синий
+    ColorSequenceKeypoint.new(1, Color3.fromHSV(0.8, 1, 1))        -- Фиолетовый
+})
+
+
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            local char = game.Players.LocalPlayer.Character
+			if char then
+            local bone = char:FindFirstChild("Bone")
+            if bone then
+                bone:Destroy()
+            end
+        end
+    end
+end)
+end)
+SkinsSansSection:NewButton("NMMSans", "Reset to use", function()
+	game.Players.LocalPlayer.Skins.Sans.NMSansNew.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "NMSansNew"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+
+wait(1)
+
+local attach = Instance.new("Attachment")
+attach.Parent = workspace.sanssuperduper.Head
+attach.Name = "Attach"
+
+
+local clonedAura = Instance.new("ParticleEmitter")
+clonedAura.Parent = workspace.sanssuperduper.Head.Attach
+clonedAura.Name = "Flame"
+clonedAura.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura.LightEmission = 1
+clonedAura.Texture = "rbxassetid://12077615395"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura.ZOffset = -0.5
+clonedAura.Acceleration = Vector3.new(0, 36, 0)
+clonedAura.Drag = 5
+clonedAura.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura.Rate = 40
+clonedAura.LockedToPart = true
+clonedAura.Rotation = NumberRange.new(-180, 180)
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura.Speed = NumberRange.new(3.6, 3.6)
+
+clonedAura.SpreadAngle = Vector2.new(360, 360)
+clonedAura.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 85, 255)),          
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 255))
+})
+
+local clonedAura1 = Instance.new("ParticleEmitter")
+clonedAura1.Parent = workspace.sanssuperduper.Head.Attach
+clonedAura1.Name = "Flame2"
+clonedAura1.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura1.LightEmission = 1
+clonedAura1.Texture = "rbxassetid://15484052560"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura1.ZOffset = -0.5
+clonedAura1.Acceleration = Vector3.new(0, 36, 0)
+clonedAura1.Drag = 5
+clonedAura1.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura1.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura1.TimeScale = 0.5
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura1.Speed = NumberRange.new(3.6, 3.6)
+clonedAura1.LockedToPart = true
+
+clonedAura1.SpreadAngle = Vector2.new(360, 360)
+clonedAura1.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura1.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 85, 255)),          
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 255))
+})
+
+local UserInputService = game:GetService("UserInputService")
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            local char = game.Players.LocalPlayer.Character
+			if char then
+            local bone = char:FindFirstChild("Bone")
+            if bone then
+                bone:Destroy()
+            end
+        end
+    end
+end)
+
+
+
+end)
+
+SkinsSansSection:NewButton("soy delta", "soy delta", function()
+    game.Players.LocalPlayer.Skins.Sans.UTSans.Value = true
+	game.Players.LocalPlayer.Skins.Sans.Value = "UTSans"
+	game.ReplicatedStorage.Char:FireServer("Sans", "")
+	-- LocalScript dentro de StarterPlayerScripts o StarterCharacterScripts
+
+local player = game.Players.LocalPlayer
+local movesFolder = workspace:WaitForChild("Moves")
+local playerFolder = movesFolder:WaitForChild(player.Name)
+
+-- Función que convierte absolutamente todo del Blaster2 a naranja
+local function makeBlasterOrange(blaster)
+    for _, descendant in ipairs(blaster:GetDescendants()) do
+        -- Cambiar BasePart
+        if descendant:IsA("BasePart") then
+            descendant.BrickColor = BrickColor.new("Bright orange")
+            descendant.Material = Enum.Material.Neon -- opcional para resaltar el color
+        -- Cambiar Beams
+        elseif descendant:IsA("Beam") then
+            descendant.Color = ColorSequence.new(Color3.fromRGB(255, 165, 0))
+        -- Cambiar Trails
+        elseif descendant:IsA("Trail") then
+            descendant.Color = ColorSequence.new(Color3.fromRGB(255, 165, 0))
+        -- Cambiar partículas
+        elseif descendant:IsA("ParticleEmitter") then
+            descendant.Color = ColorSequence.new(Color3.fromRGB(255, 165, 0))
+        -- Cambiar Decals o SurfaceGui si existen
+        elseif descendant:IsA("Decal") or descendant:IsA("Texture") then
+            descendant.Color3 = Color3.fromRGB(255, 165, 0)
+        end
+    end
+end
+end)
+
+-- Bucle que vigila la aparición de Blaster2 y aplica cambios automáticamente
+spawn(function()
+    while true do
+        local blaster = playerFolder:FindFirstChild("Blaster")
+        if blaster then
+            makeBlasterOrange(blaster)
+        end
+        wait(0.1) -- revisa 10 veces por segundo
+    end
+end)
+
+local SkinsGasterSection = Main:NewSection("GTGaster")
+SkinsGasterSection:NewButton("VoidGaster", "IM WING GASTER!", function()
+    game.Players.LocalPlayer.Skins.GTGaster["Void Gaster"].Value = true
+	game.Players.LocalPlayer.Skins.GTGaster.Value = "Void Gaster"
+	game.ReplicatedStorage.Char:FireServer("GTGaster", "")
+	wait(1)
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local player = game.Players.LocalPlayer
+
+local function onKeyPress(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.Z then
+        -- Ejecutar el spawn de las manos
+        local args = {
+            "Hands",
+            true
+        }
+        ReplicatedStorage:WaitForChild("GTGaster"):WaitForChild("Spawn"):FireServer(unpack(args))
+
+        -- Esperar un poco a que se generen las manos
+        task.wait(0.5)
+
+        -- Ejecutar tu script original de eliminar manos extra
+        local char = player.Character or player.CharacterAdded:Wait()
+        local Hands = char:WaitForChild("GasterHands")
+
+        local Hand2 = Hands:FindFirstChild("Hand2")
+        local Hand3 = Hands:FindFirstChild("Hand3")
+        local Hand4 = Hands:FindFirstChild("Hand4")
+        local Hand5 = Hands:FindFirstChild("Hand5")
+        local Hand6 = Hands:FindFirstChild("Hand6")
+
+        if Hand2 then Hand2:Destroy() end
+        if Hand3 then Hand3:Destroy() end
+        if Hand4 then Hand4:Destroy() end
+        if Hand5 then Hand5:Destroy() end
+        if Hand6 then Hand6:Destroy() end
+    end
+end
+
+UserInputService.InputBegan:Connect(onKeyPress)
+
+end)
+local SkinsGTFriskSection = Main:NewSection("GTFrisk")
+SkinsGTFriskSection:NewButton("Vergil", "(If you will dash you will be kicked, cant fix it for now)", function()
+    game.Players.LocalPlayer.Skins.GTFrisk.Vergil.Value = true
+	game.Players.LocalPlayer.Skins.GTFrisk.Value = "Vergil"
+	game.ReplicatedStorage.Char:FireServer("GTFrisk", "")
+end)
+local SkinsCrossSection = Main:NewSection("XTCross")
+SkinsCrossSection:NewButton("GokuBlack", "Reset to use", function()
+	game.Players.LocalPlayer.Skins.XTCross.GBlack.Value = true
+	game.Players.LocalPlayer.Skins.XTCross.Value = "GBlack"
+	game.ReplicatedStorage.Char:FireServer("XTCross", "")
+
+end)
+SkinsCrossSection:NewButton("UnderPlayer", "Reset to use", function()
+    game.Players.LocalPlayer.Skins.XTCross.UnderPlayer.Value = true
+	game.Players.LocalPlayer.Skins.XTCross.Value = "UnderPlayer"
+	game.ReplicatedStorage.Char:FireServer("XTCross", "")
+end)
+SkinsCrossSection:NewButton("Reapertale", "Reset to use", function()
+    game.Players.LocalPlayer.Skins.XTCross.Reapertale.Value = true
+	game.Players.LocalPlayer.Skins.XTCross.Value = "Reapertale"
+	game.ReplicatedStorage.Char:FireServer("XTCross", "")
+end)
+local Main = Window:NewTab("Capes and Titles")
+local Capes = Main:NewSection("Capes")
+Capes:NewButton("GasterGeneral's Cape", "Spawn to get it", function()
+
+--Script on cape by iskra
+--------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://71897620602260"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+end)
+Capes:NewButton("Tridenta's Cape", "Spawn to get it", function()
+
+--Script on cape by iskra
+--------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://121689991902705"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+end)
+Capes:NewButton("OldPolychromia's Cape", "Spawn to get it", function()
+
+--Script on cape by iskra
+--------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://118767676130184"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+end)
+Capes:NewButton("NightmareJudge's Cape", "Spawn to get it", function()
+
+--Script on cape by iskra
+--------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://138091795228608"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+end)
+Capes:NewButton("Creator's Cape", "Spawn to get it", function()
+
+--Script on cape by iskra
+--------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://13958501606"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+end)
+Capes:NewButton("Artist's Cape", "Spawn to get it", function()
+    --------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://13833626575"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+
+
+end)
+Capes:NewButton("GSW Cape", "Spawn to get it", function()
+
+--Script on cape by iskra
+--------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://71469283521550"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+end)
+Capes:NewButton("ST Cape", "Spawn to get it", function()
+
+--Script on cape by iskra
+--------------------------------MODEL--------------------------------
+local ModelCape = Instance.new("Model")
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+--------------------------------BONES--------------------------------
+
+local cap = Instance.new("Part")
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+--------------------------------CONNECT-THING--------------------------------
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+--------------------------------MESH--------------------------------
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://94774677787717"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+--------------------------------WELDS--------------------------------
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+
+
+
+local Bone1 = Instance.new("Bone")
+local Bone2 = Instance.new("Bone")
+local Bone3 = Instance.new("Bone")
+local Bone4 = Instance.new("Bone")
+local Bone5 = Instance.new("Bone")
+local Bone6 = Instance.new("Bone")
+local Bone7 = Instance.new("Bone")
+local Bone8 = Instance.new("Bone")
+local Bone9 = Instance.new("Bone")
+local Bone10 = Instance.new("Bone")
+local Bone11 = Instance.new("Bone")
+
+Bone1.Name = "Bone1"
+Bone2.Name = "Bone2"
+Bone3.Name = "Bone3"
+Bone4.Name = "Bone4"
+Bone5.Name = "Bone5"
+Bone6.Name = "Bone6"
+Bone7.Name = "Bone7"
+Bone8.Name = "Bone8"
+Bone9.Name = "Bone9"
+Bone10.Name = "Bone10"
+Bone11.Name = "Bone11"
+
+Bone1.Parent = game.Players.LocalPlayer.Character.Cape.cap
+Bone2.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1
+Bone3.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2
+Bone4.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3
+Bone5.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4
+Bone6.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5
+Bone7.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6
+Bone8.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7
+Bone9.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8
+Bone10.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9
+Bone11.Parent = game.Players.LocalPlayer.Character.Cape.cap.Bone1.Bone2.Bone3.Bone4.Bone5.Bone6.Bone7.Bone8.Bone9.Bone10
+
+
+
+Bone1.Axis = Vector3.new(0.924, 0.375, -0.068)
+Bone1.SecondaryAxis = Vector3.new(0.377, -0.925, 0.022)
+Bone2.Axis = Vector3.new(0.972, 0.232, 0.003)
+Bone2.SecondaryAxis = Vector3.new(-0.232, 0.972, -0.017)
+Bone3.Axis = Vector3.new(0.999, 0.042, 0.003)
+Bone3.SecondaryAxis = Vector3.new(-0.042, 0.999, 0.014)
+Bone4.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone4.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone5.Axis = Vector3.new(0.999, 0.036, -0.038)
+Bone5.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone6.Axis = Vector3.new(0.997, 0.031, -0.074)
+Bone6.SecondaryAxis = Vector3.new(-0.031, 0.999, 0.01)
+Bone7.Axis = Vector3.new(1, 0.016, -0)
+Bone7.SecondaryAxis = Vector3.new(-0.016, 1, 0.01)
+Bone8.Axis = Vector3.new(1, 0.002, -0)
+Bone8.SecondaryAxis = Vector3.new(-0.002, 1, 0.013)
+Bone9.Axis = Vector3.new(0.997, -0.077, -0)
+Bone9.SecondaryAxis = Vector3.new(0.077, 0.997, 0.029)
+Bone10.Axis = Vector3.new(0.99, -0.138, 0.001)
+Bone10.SecondaryAxis = Vector3.new(-0.036, 0.999, 0.017)
+Bone11.Axis = Vector3.new(1, 1.984e-07, -1.49e-08)
+Bone11.SecondaryAxis = Vector3.new(-1.984e-07, 1, 3.353e-08)
+end)
+local Titles = Main:NewSection("Titles")
+
+Titles:NewButton("CrimsonKing", "Error's Title :sob:", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("CrimsonKing")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end)
+Titles:NewButton("ComicJudge(New)", "eererererere", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("CJDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end)
+Titles:NewButton("ComicJudge(Old)", "eererererere", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("OLDCJDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end)
+Titles:NewButton("NightmareJudge(New)", "I aware still selling HotDogs...", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("CJNDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end)
+Titles:NewButton("NightmareJudge(Old)", "I aware still selling HotDogs...", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("OLDCJNDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end)
+Titles:NewButton("Tester", "steal brainrot tester", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("Test")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end)
+Titles:NewButton("Developer", "grow garden developer goes hard", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("Dev")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end)
+Titles:NewButton("Polychromia(NEW)", "piano gaming", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("poly2")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+Titles:NewButton("Polychromia(OLD)", "piano gaming", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("poly1")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+Titles:NewButton("GasterGeneral", "tryhard piano gaming", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("poly51")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+Titles:NewButton("Tournament Winner", "skibidi tower winner", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("TourneyWinner")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+Titles:NewButton("Player(NEW)", "Dirty penis", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("Player")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+Titles:NewButton("Player(OLD)", "Dirty penis", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("OLDPlayer")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+Titles:NewButton("HonoredOne", "podsos adminov", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("HonoredOne")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+Titles:NewButton("GreenSlacker", "shrek", function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("GreenSlacker")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end)
+local Chars = Window:NewTab("Characters")
+local Customs = Chars:NewSection("Customs")
+Customs:NewButton("KJ", "Stickman(ONLY ON PRIVATE LOL)", function()
+game.ReplicatedStorage.Char:FireServer("KJ", "")
+end)
+Customs:NewButton("Sukuna", "IdidntWatchThis(ONLY ON PRIVATE LOL)", function()
+game.ReplicatedStorage.Char:FireServer("Sukuna", "")
+end)
+
+local Main = Window:NewTab("SomeShit")
+local SomeShit = Main:NewSection("SomeShit")
+SomeShit:NewButton("Dex", "Explorer", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/MassiveHubs/loadstring/refs/heads/main/DexXenoAndRezware'))()
+end)
+SomeShit:NewButton("Invisible", "Loads long but works good", function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()local Players = game:GetService("Players")
+end)
+SomeShit:NewButton("FlyGui", "Loads long but works good", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end)
+
+SomeShit:NewButton("PinosMrime", "JUDGEMENT", function()
+	local Music = Instance.new("Sound")
+Music.Parent = game.Players.LocalPlayer.Character.Torso
+Music.SoundId = "rbxassetid://14741339189"
+Music.Looped = true
+Music.Volume = 1
+Music.TimePosition = 0
+Music.PlaybackSpeed = 1
+Music.Playing = true
+Music.Name = "JUDGEMENT LMAO"
+end)
+SomeShit:NewButton("Finiki", "GLORY TO FINIKI!(Use GTFrisk and be on map)", function()
+_G.HeadSize = 100000
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+end)
+
+SomeShit:NewButton("UnFiniki", "GLORY TO FINIKI!(Use GTFrisk and be on map)", function()
+_G.HeadSize = 2
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+end)
+
+end
