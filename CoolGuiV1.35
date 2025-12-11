@@ -240,12 +240,12 @@ SkinsSansSection:NewButton("ColorSans", "Reset to use", function()
 
 
 local attach = Instance.new("Attachment")
-attach.Parent = workspace.sanssuperduper.Head
+attach.Parent = game.Players.LocalPlayer.Character.Head
 attach.Name = "Attach"
 
 
 local clonedAura = Instance.new("ParticleEmitter")
-clonedAura.Parent = workspace.sanssuperduper.Head.Attach
+clonedAura.Parent = game.Players.LocalPlayer.Character.Head.Attach
 clonedAura.Name = "Flame"
 clonedAura.Brightness = 10 -- Исправлено: число вместо строки
 clonedAura.LightEmission = 1
@@ -291,7 +291,7 @@ clonedAura.Color = ColorSequence.new({
 })
 
 local clonedAura1 = Instance.new("ParticleEmitter")
-clonedAura1.Parent = workspace.sanssuperduper.Head.Attach
+clonedAura1.Parent = game.Players.LocalPlayer.Character.Head.Attach
 clonedAura1.Name = "Flame2"
 clonedAura1.Brightness = 10 -- Исправлено: число вместо строки
 clonedAura1.LightEmission = 1
