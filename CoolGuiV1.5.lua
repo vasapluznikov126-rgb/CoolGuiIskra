@@ -1235,6 +1235,7 @@ local myWindow = createWindow(
 	-Deleted Finiki for a few updates
 	-Restored old dex and now its apiless
 
+	About future updates I plan to add colorful nicknames to every skin
 
 	Thanks for admiting, i love making this gui for now.
     ]]
