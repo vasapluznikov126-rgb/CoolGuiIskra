@@ -1,12 +1,3 @@
-
---[[
-	Im finally decided to add logs in gui soooo let me tell you Changes
-    -Now You will have cape name "OldPolychromia(or smth)" because it had other name
-    -You can finally use dex again because somehow way it got broken so yea i decided to fix this
-]]
-
-
-
 if game.PlaceId == 8573962925 then
 
 local Library = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
@@ -612,10 +603,10 @@ local Button = Main:CreateButton({
 	game.Players.LocalPlayer.Skins.XTCross.GBlack.Value = true
 	game.Players.LocalPlayer.Skins.XTCross.Value = "GBlack"
 	game.ReplicatedStorage.Char:FireServer("XTCross", "")
-    wait(1)
+    wait(2)
     local nickname = game.Players.LocalPlayer.Character.Head.Display.Frame.TextLabel
-    nickname.TextColor3 = Color3.fromRGB(0, 0, 0)
-    nickname.TextStrokeColor3 = Color3.fromRGB(50, 0, 25)
+    nickname.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+    nickname.TextColor3 = Color3.fromRGB(50, 0, 25)
     end,
 })
 
@@ -1112,7 +1103,7 @@ local SomeShit = Main:CreateSection("SomeShit")
 local Button = Main:CreateButton({
    Name = "Dex",
    Callback = function()
-    loadstring(game:HttpGet('loadstring(game:HttpGet("https://github.com/RobloxianRoblox3200/Scripts_Roblox/raw/refs/heads/main/Dex_Explorer_V4.lua"))()'))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/UltraFEmotes/im-bored/refs/heads/main/dexnoapi.lua"))()
 end,
 })
 local Button = Main:CreateButton({
@@ -1242,6 +1233,7 @@ local myWindow = createWindow(
     -New Design for Gui.
 	-Color sans, NMMSans and Goku Black got new cool names
 	-Deleted Finiki for a few updates
+	-Restored old dex and now its apiless
 
 
 	Thanks for admiting, i love making this gui for now.
