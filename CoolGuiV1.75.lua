@@ -1311,9 +1311,7 @@ local myWindow = createWindow(
 	I have made for gui.
     
 
-    -New Design for Gui.
-	-Color sans, NMMSans and Goku Black got new cool names
-	-Deleted Finiki for a few updates
+    -Color sans got new Title and now his Chatting messages is colorful.
 
 
 	Thanks for admiting, i love making this gui for now.
