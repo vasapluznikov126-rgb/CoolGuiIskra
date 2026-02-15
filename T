@@ -1,0 +1,2792 @@
+if game.PlaceId == 8573962925 then
+local Library = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Library:CreateWindow({
+   Name = "Iskra's Cool Gui",
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "Hi",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = "CoolGui", -- Create a custom folder for your hub/game
+      FileName = "Cool Gui"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Welcome to cool gui!",
+      Subtitle = "Get Key to access the gui",
+      Note = "Script Made By Iskra (GBlack Scythe By WayneExecuter)",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"2343506"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+--Main
+local Main = Window:CreateTab("Skins")
+local SkinsAsgoreSection = Main:CreateSection("Asgore")
+local Button = Main:CreateButton({
+   Name = "Color Asgore",
+   Callback = function()
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+game.Players.LocalPlayer.Skins.Asgore.XA.Value = true
+game.Players.LocalPlayer.Skins.Asgore.Value = "XA"
+game.ReplicatedStorage.Char:FireServer("Asgore", "")
+wait(2.5)
+
+local Spear = game.Players.LocalPlayer.Character.Spear
+
+local SpearMesh = game.Players.LocalPlayer.Character.Spear.Spear
+SpearMesh.Color = Color3.fromRGB(255, 255, 0)
+
+local Attach = game.Players.LocalPlayer.Character.Spear.Spear.Attachment
+local Burst = game.Players.LocalPlayer.Character.Spear.Spear.Attachment:FindFirstChild("Burst")
+local Fire = game.Players.LocalPlayer.Character.Spear.Spear.Attachment:FindFirstChild("Fire")
+local FireBlast = game.Players.LocalPlayer.Character.Spear.Spear.Attachment:FindFirstChild("FireBlast")
+
+local Fire1 = game.Players.LocalPlayer.Character.Spear.Spear.Fire
+local FirePerm = game.Players.LocalPlayer.Character.Spear.Spear.FirePerm
+local FirePerm2 = game.Players.LocalPlayer.Character.Spear.Spear.FirePerm2
+local FireWall = game.Players.LocalPlayer.Character.Spear.Spear.FireWall
+
+local Trial1 = game.Players.LocalPlayer.Character.Spear.Spear.Trail1
+local Trial2 = game.Players.LocalPlayer.Character.Spear.Spear.Trail2
+
+local Trial3 = Instance.new("Trail")
+Trial3.Parent = game.Players.LocalPlayer.Character.Spear.Spear
+Trial3.Name = "Trail3"
+Trial3.Texture = "rbxassetid://11607034253"
+Trial3.TextureLength = 33
+Trial3.LightEmission = 1
+Trial3.Brightness = 10
+Trial3.Lifetime = 0.2
+Trial3.MaxLength = 0
+Trial3.MinLength = 0.11
+Trial3.WidthScale = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 1),
+    NumberSequenceKeypoint.new(1, 0)
+})
+Trial3.Attachment0 = game.Players.LocalPlayer.Character.Spear.Spear["2"]
+Trial3.Attachment1 = game.Players.LocalPlayer.Character.Spear.Spear["1"]
+
+local Main = game.Players.LocalPlayer.Character.Spear.Main
+local HighLight = game.Players.LocalPlayer.Character.Spear.Spear.Highlight
+HighLight.Enabled = true
+HighLight.OutlineColor = Color3.fromRGB(0, 0, 255)
+
+Burst.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+Fire.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+Fire1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+FirePerm.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+FirePerm2.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+FireWall.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+
+
+Trial1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+
+Trial2.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+Trial3.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+	ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 255, 0)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(0, 255, 0)),
+	ColorSequenceKeypoint.new(0.6, Color3.fromRGB(0, 255, 255)),
+	ColorSequenceKeypoint.new(0.8, Color3.fromRGB(0, 0, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+})
+
+Trial1.Enabled = true
+Trial2.Enabled = true
+Trial3.Enabled = true
+   end,
+})
+ 	
+local Button = Main:CreateButton({
+   Name = "LastBreathPhase2",
+   Callback = function()
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+game.Players.LocalPlayer.Skins.Sans.LBP2.Value = true
+game.Players.LocalPlayer.Skins.Sans.Value = "LBP2"
+game.ReplicatedStorage.Char:FireServer("Sans", "")
+wait(1)
+
+local Model = Instance.new("Model")
+Model.Parent = game.Players.LocalPlayer.Character
+Model.Name = "Skin"
+
+local Bone = Instance.new("Part")
+Bone.Parent = game.Players.LocalPlayer.Character.Skin
+Bone.Name = "Bone"
+Bone.CanCollide = false
+Bone.Color = Color3.fromRGB(248, 248, 248)
+
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Skin.Bone
+SpecialMesh.Name = "MeshForBone"
+SpecialMesh.MeshId = "rbxassetid://465130937"
+SpecialMesh.Scale = Vector3.new(0.01, 0.025, 0.01)
+SpecialMesh.Offset = Vector3.new(0, 0, -0.9)
+
+local BoneStatic = Instance.new("Part")
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Skin
+BoneStatic.Name = "BoneStatic"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+local Weld1 = Instance.new("Motor6D")
+local Weld2 = Instance.new("Motor6D")
+Weld1.Name = "HandConnect"
+Weld2.Name = "BoneConnect"
+Weld1.Parent = game.Players.LocalPlayer.Character.Skin.BoneStatic
+Weld2.Parent = game.Players.LocalPlayer.Character.Skin.BoneStatic
+Weld1.Part0 = game.Players.LocalPlayer.Character["Right Arm"]
+Weld2.Part0 = game.Players.LocalPlayer.Character["Right Arm"]
+Weld1.Part1 = game.Players.LocalPlayer.Character.Skin["Bone"]
+Weld2.Part1 = game.Players.LocalPlayer.Character.Skin["BoneStatic"]
+Weld1.C0 = CFrame.Angles(math.rad(-115), 0, 0)
+
+
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            local char = game.Players.LocalPlayer.Character
+			if char then
+            local bone = char:FindFirstChild("Bone")
+            if bone then
+                bone:Destroy()
+            end
+        end
+    end
+end)
+
+   end,
+})  
+local Button = Main:CreateButton({
+   Name = "LastBreathPhase3",
+   Callback = function()
+	game.Players.LocalPlayer.Skins.Sans.LBP3.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "LBP3"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+   end,
+})  
+
+local Button = Main:CreateButton({
+   Name = "DustSans",
+   Callback = function()
+	game.Players.LocalPlayer.Skins.Sans.DusttaleSans.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "DusttaleSans"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+   end,
+})  
+
+local Button = Main:CreateButton({
+   Name = "ColorSans",
+   Callback = function()
+	game.Players.LocalPlayer.Skins.Sans.NMSans.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "NMSans"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+    wait(1)
+
+
+local attach = Instance.new("Attachment")
+attach.Parent = game.Players.LocalPlayer.Character.Head
+attach.Name = "Attach"
+
+
+local clonedAura = Instance.new("ParticleEmitter")
+clonedAura.Parent = game.Players.LocalPlayer.Character.Head.Attach
+clonedAura.Name = "Flame"
+clonedAura.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura.LightEmission = 1
+clonedAura.Texture = "rbxassetid://12077615395"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura.ZOffset = -0.5
+clonedAura.Acceleration = Vector3.new(0, 36, 0)
+clonedAura.Drag = 5
+clonedAura.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura.Rate = 40
+clonedAura.LockedToPart = true
+clonedAura.Rotation = NumberRange.new(-180, 180)
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura.Speed = NumberRange.new(3.6, 3.6)
+
+clonedAura.SpreadAngle = Vector2.new(360, 360)
+clonedAura.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromHSV(0, 1, 1)),          -- Красный
+    ColorSequenceKeypoint.new(0.2, Color3.fromHSV(0.1, 1, 1)),     -- Оранжевый
+    ColorSequenceKeypoint.new(0.4, Color3.fromHSV(0.15, 1, 1)),    -- Желтый
+    ColorSequenceKeypoint.new(0.6, Color3.fromHSV(0.3, 1, 1)),     -- Зеленый
+    ColorSequenceKeypoint.new(0.8, Color3.fromHSV(0.7, 1, 1)),     -- Синий
+    ColorSequenceKeypoint.new(1, Color3.fromHSV(0.8, 1, 1))        -- Фиолетовый
+})
+
+local clonedAura1 = Instance.new("ParticleEmitter")
+clonedAura1.Parent = game.Players.LocalPlayer.Character.Head.Attach
+clonedAura1.Name = "Flame2"
+clonedAura1.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura1.LightEmission = 1
+clonedAura1.Texture = "rbxassetid://15484052560"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura1.ZOffset = -0.5
+clonedAura1.Acceleration = Vector3.new(0, 36, 0)
+clonedAura1.Drag = 5
+clonedAura1.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura1.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura1.TimeScale = 0.5
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura1.Speed = NumberRange.new(3.6, 3.6)
+clonedAura1.LockedToPart = true
+
+clonedAura1.SpreadAngle = Vector2.new(360, 360)
+clonedAura1.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura1.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromHSV(0, 1, 1)),          -- Красный
+    ColorSequenceKeypoint.new(0.2, Color3.fromHSV(0.1, 1, 1)),     -- Оранжевый
+    ColorSequenceKeypoint.new(0.4, Color3.fromHSV(0.15, 1, 1)),    -- Желтый
+    ColorSequenceKeypoint.new(0.6, Color3.fromHSV(0.3, 1, 1)),     -- Зеленый
+    ColorSequenceKeypoint.new(0.8, Color3.fromHSV(0.7, 1, 1)),     -- Синий
+    ColorSequenceKeypoint.new(1, Color3.fromHSV(0.8, 1, 1))        -- Фиолетовый
+})
+
+local nickname = game.Players.LocalPlayer.Character.Head.Display.Frame.TextLabel
+local Chat = game.Players.LocalPlayer.Character.Head.Chat.TextLabel
+local transitionTime = 0.5 -- Время перехода между цветами (в секундах)
+
+-- Цвета радуги в правильном порядке
+local rainbowColors = {
+    Color3.fromRGB(255, 0, 0),      -- Красный
+    Color3.fromRGB(255, 127, 0),    -- Оранжевый
+    Color3.fromRGB(255, 255, 0),    -- Желтый
+    Color3.fromRGB(0, 255, 0),      -- Зеленый
+    Color3.fromRGB(0, 0, 255),      -- Синий
+    Color3.fromRGB(75, 0, 130),     -- Индиго
+    Color3.fromRGB(148, 0, 211)     -- Фиолетовый
+}
+
+local currentIndex = 1
+local timePassed = 0
+
+game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
+    timePassed = timePassed + deltaTime
+    
+    if timePassed >= transitionTime then
+        currentIndex = (currentIndex % #rainbowColors) + 1
+        timePassed = 0
+    end
+    
+    -- Плавный переход между текущим и следующим цветом
+    local nextIndex = (currentIndex % #rainbowColors) + 1
+    local progress = timePassed / transitionTime
+    
+    local currentColor = rainbowColors[currentIndex]
+    local nextColor = rainbowColors[nextIndex]
+    
+    nickname.TextColor3 = Color3.new(
+        currentColor.R + (nextColor.R - currentColor.R) * progress,
+        currentColor.G + (nextColor.G - currentColor.G) * progress,
+        currentColor.B + (nextColor.B - currentColor.B) * progress
+    )
+end)
+
+game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
+    timePassed = timePassed + deltaTime
+    
+    if timePassed >= transitionTime then
+        currentIndex = (currentIndex % #rainbowColors) + 1
+        timePassed = 0
+    end
+    
+    -- Плавный переход между текущим и следующим цветом
+    local nextIndex = (currentIndex % #rainbowColors) + 1
+    local progress = timePassed / transitionTime
+    
+    local currentColor = rainbowColors[currentIndex]
+    local nextColor = rainbowColors[nextIndex]
+    
+    Chat.TextColor3 = Color3.new(
+        currentColor.R + (nextColor.R - currentColor.R) * progress,
+        currentColor.G + (nextColor.G - currentColor.G) * progress,
+        currentColor.B + (nextColor.B - currentColor.B) * progress
+    )
+end)
+
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            local char = game.Players.LocalPlayer.Character
+			if char then
+            local bone = char:FindFirstChild("Bone")
+            if bone then
+                bone:Destroy()
+            end
+        end
+    end
+end)
+   end,
+})
+
+
+
+local Button = Main:CreateButton({
+   Name = "NMMSans",
+   Callback = function()
+    game.Players.LocalPlayer.Skins.Sans.NMSansNew.Value = true
+    game.Players.LocalPlayer.Skins.Sans.Value = "NMSansNew"
+    game.ReplicatedStorage.Char:FireServer("Sans", "")
+
+wait(1)
+
+   local attach = Instance.new("Attachment")
+   local nickname = game.Players.LocalPlayer.Character.Head.Display.Frame.TextLabel
+attach.Parent = game.Players.LocalPlayer.Character.Head
+attach.Name = "Attach"
+
+
+local clonedAura = Instance.new("ParticleEmitter")
+clonedAura.Parent = game.Players.LocalPlayer.Character.Head.Attach
+clonedAura.Name = "Flame"
+clonedAura.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura.LightEmission = 1
+clonedAura.Texture = "rbxassetid://12077615395"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura.ZOffset = -0.5
+clonedAura.Acceleration = Vector3.new(0, 36, 0)
+clonedAura.Drag = 5
+clonedAura.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura.Rate = 40
+clonedAura.LockedToPart = true
+clonedAura.Rotation = NumberRange.new(-180, 180)
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura.Speed = NumberRange.new(3.6, 3.6)
+
+clonedAura.SpreadAngle = Vector2.new(360, 360)
+clonedAura.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 85, 255)),          
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 255))
+})
+
+local clonedAura1 = Instance.new("ParticleEmitter")
+clonedAura1.Parent = game.Players.LocalPlayer.Character.Head.Attach
+clonedAura1.Name = "Flame2"
+clonedAura1.Brightness = 10 -- Исправлено: число вместо строки
+clonedAura1.LightEmission = 1
+clonedAura1.Texture = "rbxassetid://15484052560"
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Size = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0.885, 0.885),
+    NumberSequenceKeypoint.new(1, 0.984, 0.984)
+})
+
+-- Исправлено: добавлены запятые между NumberSequenceKeypoint
+clonedAura1.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0, 0),
+    NumberSequenceKeypoint.new(1, 0, 0)
+})
+
+clonedAura1.ZOffset = -0.5
+clonedAura1.Acceleration = Vector3.new(0, 36, 0)
+clonedAura1.Drag = 5
+clonedAura1.VelocityInheritance = 0
+
+-- Исправлено: Lifetime должен быть NumberRange, а не Vector2
+clonedAura1.Lifetime = NumberRange.new(0.3, 0.5)
+clonedAura1.TimeScale = 0.5
+
+-- Исправлено: Speed должен быть NumberRange, а не Vector2
+clonedAura1.Speed = NumberRange.new(3.6, 3.6)
+clonedAura1.LockedToPart = true
+
+clonedAura1.SpreadAngle = Vector2.new(360, 360)
+clonedAura1.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+clonedAura1.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+
+clonedAura1.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 85, 255)),          
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 255))
+})
+
+
+
+nickname.TextColor3 = Color3.fromRGB(0, 0, 0)
+nickname.TextStrokeColor3 = Color3.fromRGB(14, 249, 253)
+
+local UserInputService = game:GetService("UserInputService")
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            local char = game.Players.LocalPlayer.Character
+			if char then
+            local bone = char:FindFirstChild("Bone")
+            if bone then
+                bone:Destroy()
+            end
+        end
+    end
+end)
+   end,
+})  
+
+
+local Button = Main:CreateButton({
+   Name = "soy delta",
+   Callback = function()
+	 game.Players.LocalPlayer.Skins.Sans.UTSans.Value = true
+	game.Players.LocalPlayer.Skins.Sans.Value = "UTSans"
+	game.ReplicatedStorage.Char:FireServer("Sans", "")
+   end,
+})  
+
+
+
+local SkinsGasterSection = Main:CreateSection("GTGaster")
+
+local Button = Main:CreateButton({
+   Name = "VoidGaster",
+   Callback = function()
+  game.Players.LocalPlayer.Skins.GTGaster["Void Gaster"].Value = true
+	game.Players.LocalPlayer.Skins.GTGaster.Value = "Void Gaster"
+	game.ReplicatedStorage.Char:FireServer("GTGaster", "")
+	wait(1)
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local player = game.Players.LocalPlayer
+
+local function onKeyPress(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.Z then
+        -- Ejecutar el spawn de las manos
+        local args = {
+            "Hands",
+            true
+        }
+        ReplicatedStorage:WaitForChild("GTGaster"):WaitForChild("Spawn"):FireServer(unpack(args))
+
+        -- Esperar un poco a que se generen las manos
+        task.wait(0.5)
+
+        -- Ejecutar tu script original de eliminar manos extra
+        local char = player.Character or player.CharacterAdded:Wait()
+        local Hands = char:WaitForChild("GasterHands")
+
+        local Hand2 = Hands:FindFirstChild("Hand2")
+        local Hand3 = Hands:FindFirstChild("Hand3")
+        local Hand4 = Hands:FindFirstChild("Hand4")
+        local Hand5 = Hands:FindFirstChild("Hand5")
+        local Hand6 = Hands:FindFirstChild("Hand6")
+
+        if Hand2 then Hand2:Destroy() end
+        if Hand3 then Hand3:Destroy() end
+        if Hand4 then Hand4:Destroy() end
+        if Hand5 then Hand5:Destroy() end
+        if Hand6 then Hand6:Destroy() end
+    end
+end
+-- ============ ПРОВЕРКА ПЕРСОНАЖА (ТОЛЬКО GTGaster) ============
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local charValue = player:WaitForChild("Char")
+
+local function isGTGaster()
+    return charValue.Value == "GTGaster"
+end
+
+-- Если не GTGaster — убиваем скрипт
+if not isGTGaster() then
+    script:Destroy()
+    return
+end
+
+-- Если чар сменился — тоже убиваем скрипт
+charValue:GetPropertyChangedSignal("Value"):Connect(function()
+    if not isGTGaster() then
+        script:Destroy()
+    end
+end)
+
+UserInputService.InputBegan:Connect(onKeyPress)
+   end,
+})  
+
+
+local SkinsGTFriskSection = Main:CreateSection("GTFrisk")
+local Button = Main:CreateButton({
+   Name = "Vergil",
+   Callback = function()
+    game.Players.LocalPlayer.Skins.GTFrisk.Vergil.Value = true
+	game.Players.LocalPlayer.Skins.GTFrisk.Value = "Vergil"
+	game.ReplicatedStorage.Char:FireServer("GTFrisk", "")
+    end,
+})
+    
+local SkinsCrossSection = Main:CreateSection("XTCross")
+local Button = Main:CreateButton({
+   Name = "GBlack",
+   Callback = function()
+   game.Players.LocalPlayer.Skins.XTCross.GBlack.Value = true
+	game.Players.LocalPlayer.Skins.XTCross.Value = "GBlack"
+	game.ReplicatedStorage.Char:FireServer("XTCross", "")
+	wait(1)
+
+-- ============ ПРОВЕРКА ПЕРСОНАЖА (ТОЛЬКО XTCross) ============
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local charValue = player:WaitForChild("Char")
+
+local function isXTCross()
+    return charValue.Value == "XTCross"
+end
+
+-- Если не XTCross — выключаем всё и удаляем скрипт
+if not isXTCross() then
+    script:Destroy()
+    return
+end
+
+-- Если чар сменился — полностью гасим систему и удаляем скрипт
+charValue:GetPropertyChangedSignal("Value"):Connect(function()
+    if not isXTCross() then
+        scriptRunning = false
+        destroyScythe()
+        script:Destroy()
+    end
+end)
+
+
+
+game:GetObjects("rbxassetid://125167191133110")[1].Parent = workspace
+	
+
+local GBlackDummy = workspace:WaitForChild("dustdustNormal")
+if GBlackDummy then
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    -- Таймаут на поиск Humanoid
+    local function waitForHumanoid(char, timeout)
+        local start = tick()
+        while tick() - start < timeout do
+            local hum = char:FindFirstChildOfClass("Humanoid")
+            if hum then return hum end
+            task.wait(0.1)
+        end
+        return nil
+    end
+    local hum = waitForHumanoid(character, 2)
+    if not hum then
+        warn("Humanoid не найден за 2 секунды, скрипт остановлен.")
+        return
+    end
+
+    local parts = {"Torso", "Left Leg", "Left Arm", "Right Leg", "Right Arm", "Head"}
+
+    local function copyAllEffects(dummyPart, charPart)
+        if not dummyPart or not charPart then return end
+        for _, descendant in pairs(dummyPart:GetDescendants()) do
+            if descendant:IsA("ParticleEmitter") or
+               descendant:IsA("Beam") or
+               descendant:IsA("Trail") or
+               descendant:IsA("Fire") or
+               descendant:IsA("Smoke") or
+               descendant:IsA("Sparkles") or
+               descendant:IsA("PointLight") or
+               descendant:IsA("SurfaceLight") then
+                local clone = descendant:Clone()
+                clone.Parent = charPart
+                if clone:IsA("ParticleEmitter") then
+                    clone.LockedToPart = true
+                end
+            end
+        end
+    end
+
+    for _, partName in ipairs(parts) do
+        local dummyPart = GBlackDummy:FindFirstChild(partName)
+        local charPart = character:FindFirstChild(partName)
+        if dummyPart and charPart then
+            copyAllEffects(dummyPart, charPart)
+        end
+    end
+    GBlackDummy:Destroy()
+end
+
+local player = game.Players.LocalPlayer
+local UserInputService = game:GetService("UserInputService")
+
+local scriptRunning = true
+local character, Humanoid, dataFolder
+
+-- ============ ОСНОВНЫЕ ПЕРЕМЕННЫЕ ============
+local scytheInstance = nil
+local scytheLoaded = false
+local scytheVisible = false
+local scytheSystemEnabled = true
+local modeSwitchCooldown = false
+local modeSwitchTimer = nil
+local currentScytheMode = "normal"   -- normal / knives
+
+-- ============ СИСТЕМА АНИМАЦИИ ============
+local actionAnimTrack = nil
+local actionAnimation = Instance.new("Animation")
+actionAnimation.AnimationId = "rbxassetid://14855730384"
+
+local animationLocked = false
+local stopAnimationSystem = false
+
+-- ID анимаций idle (обычные)
+local idleAnimNormal = "rbxassetid://14853271700"
+local idleAnimKnives = "rbxassetid://14853278406"
+local currentIdleTrack = nil
+
+-- ID анимации смерти и idle для фазы 2
+local deathAnimId = "rbxassetid://15024436889"
+local idlePhase2 = "rbxassetid://14938724311"
+
+-- Звуки
+local M1SoundId = "rbxassetid://14857449509"
+local LastM1SoundId = "rbxassetid://14857449864"
+local NormalSwingSounds = {
+    "rbxassetid://16937947901",
+    "rbxassetid://16937948292",
+    "rbxassetid://16937947563",
+    "rbxassetid://16937947261",
+    "rbxassetid://16937946709",
+    "rbxassetid://16937945951",
+    "rbxassetid://16937946344"
+}
+
+-- Система M1
+local canUseM1 = true
+local M1_COOLDOWN = 2
+local M1_PRESS_LIMIT = 5
+local M1_COOLDOWN_NEW = 0.35
+local TIMEOUT_DURATION = 2
+local m1PressCount = 0
+local lastM1PressTime = 0
+local swingCooldownTask = nil
+local cooldownTask = nil
+local timeoutTask = nil
+
+-- Переменные для отложенного последнего удара
+local pendingFinalSwing = false
+local pendingFinalTimer = nil
+local PENDING_TIMEOUT = 3
+
+-- ============ ФУНКЦИЯ ОТКЛЮЧЕНИЯ ANIMATE ============
+local function disableAnimate()
+    if not character then return end
+    local animate = character:FindFirstChild("Animate")
+    if animate then
+        animate.Disabled = true
+        animate.Changed:Connect(function(prop)
+            if prop == "Disabled" and animate.Disabled == false then
+                animate.Disabled = true
+            end
+        end)
+    end
+end
+
+-- ============ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ============
+local function updateNickname()
+    if not scriptRunning or not character then return end
+    local head = character:FindFirstChild("Head")
+    if not head then return end
+    local display = head:FindFirstChild("Display")
+    if not display then
+        task.wait(1)
+        display = head:FindFirstChild("Display")
+        if not display then return end
+    end
+    local frame = display:FindFirstChild("Frame")
+    if not frame then
+        task.wait(0.5)
+        frame = display:FindFirstChild("Frame")
+        if not frame then return end
+    end
+    local textLabel = frame:FindFirstChild("TextLabel")
+    if not textLabel then
+        task.wait(0.5)
+        textLabel = frame:FindFirstChild("TextLabel")
+        if not textLabel then return end
+    end
+    local nickname = textLabel:FindFirstChild("UIGradient")
+    if not nickname then
+        nickname = Instance.new("UIGradient")
+        nickname.Name = "UIGradient"
+        nickname.Parent = textLabel
+    end
+    nickname.Rotation = 90
+    nickname.Color = ColorSequence.new({
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 195)),
+        ColorSequenceKeypoint.new(0.4, Color3.fromRGB(255, 0, 195)),
+        ColorSequenceKeypoint.new(0.8, Color3.fromRGB(255, 0, 83)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 83))
+    })
+end
+
+local function destroyScythe()
+    if scytheInstance then
+        scytheInstance:Destroy()
+        scytheInstance = nil
+    end
+    scytheLoaded = false
+    scytheVisible = false
+end
+
+local function disableScytheSystem()
+    scytheSystemEnabled = false
+    destroyScythe()
+    M1SoundId = nil
+    LastM1SoundId = nil
+
+    if pendingFinalTimer then
+        task.cancel(pendingFinalTimer)
+        pendingFinalTimer = nil
+    end
+    pendingFinalSwing = false
+
+    if swingCooldownTask then
+        task.cancel(swingCooldownTask)
+        swingCooldownTask = nil
+    end
+    if cooldownTask then
+        task.cancel(cooldownTask)
+        cooldownTask = nil
+    end
+    if timeoutTask then
+        task.cancel(timeoutTask)
+        timeoutTask = nil
+    end
+
+    if modeSwitchTimer then
+        task.cancel(modeSwitchTimer)
+        modeSwitchTimer = nil
+    end
+    modeSwitchCooldown = false
+
+    canUseM1 = true
+    m1PressCount = 0
+    animationLocked = false
+    stopAnimationSystem = true
+    disableAnimate()
+end
+
+local function canPlaySound()
+    if not scriptRunning or not character or not dataFolder then return false end
+    if not scytheSystemEnabled or stopAnimationSystem then return false end
+    local frozen = dataFolder:FindFirstChild("Frozen")
+    local blocking = dataFolder:FindFirstChild("Blocking")
+    local stunned = dataFolder:FindFirstChild("Stunned")
+    if not frozen or not blocking or not stunned then return false end
+    return (frozen.Value == false and blocking.Value == false and stunned.Value == false)
+end
+
+local function isSecondPhaseActive()
+    if not scriptRunning or not character or not dataFolder then return false end
+    local health = dataFolder:FindFirstChild("Health")
+    if health and health.Value <= 0.1 then
+        local secondPhase = dataFolder:FindFirstChild("SecondPhase")
+        if secondPhase then secondPhase.Value = true end
+        return true
+    end
+    local secondPhase = dataFolder:FindFirstChild("SecondPhase")
+    return (secondPhase and secondPhase.Value == true)
+end
+
+local function playSoundAtCharacter(soundId)
+    if not scriptRunning or not character then return nil end
+    if not canPlaySound() or not soundId then return nil end
+    local soundParent = character:FindFirstChild("Head") or character:FindFirstChild("UpperTorso") or character:FindFirstChild("HumanoidRootPart") or character
+    if not soundParent then return nil end
+    for _, oldSound in ipairs(soundParent:GetChildren()) do
+        if oldSound:IsA("Sound") and (oldSound.Name == "M1SwingSound" or oldSound.Name == "M1KnivesSound") then
+            oldSound:Stop()
+            oldSound:Destroy()
+        end
+    end
+    local sound = Instance.new("Sound")
+    sound.Name = "M1SwingSound"
+    sound.SoundId = soundId
+    sound.Volume = 5
+    sound.Parent = soundParent
+    sound:Play()
+    sound.Ended:Connect(function() sound:Destroy() end)
+    game:GetService("Debris"):AddItem(sound, 5)
+    return sound
+end
+
+local function playRandomNormalSound()
+    if #NormalSwingSounds == 0 then return nil end
+    return NormalSwingSounds[math.random(1, #NormalSwingSounds)]
+end
+
+local function resetM1Counter()
+    m1PressCount = 0
+end
+
+local function startM1Cooldown()
+    if cooldownTask then task.cancel(cooldownTask) end
+    canUseM1 = false
+    cooldownTask = task.delay(M1_COOLDOWN, function()
+        if not scriptRunning then return end
+        canUseM1 = true
+        m1PressCount = 0
+        cooldownTask = nil
+    end)
+end
+
+local function startTimeoutReset()
+    if timeoutTask then task.cancel(timeoutTask) end
+    timeoutTask = task.delay(TIMEOUT_DURATION, function()
+        if not scriptRunning then return end
+        if m1PressCount > 0 and m1PressCount < M1_PRESS_LIMIT then
+            resetM1Counter()
+        end
+        timeoutTask = nil
+    end)
+end
+
+local function startSwingCooldown()
+    if swingCooldownTask then task.cancel(swingCooldownTask) end
+    canUseM1 = false
+    swingCooldownTask = task.delay(M1_COOLDOWN_NEW, function()
+        if not scriptRunning then return end
+        canUseM1 = true
+        swingCooldownTask = nil
+    end)
+end
+
+-- Функция для фактического проигрывания последнего удара
+local function executeFinalSwing()
+    if not scriptRunning or not scytheSystemEnabled or stopAnimationSystem then return end
+
+    if currentScytheMode == "knives" then
+        playSoundAtCharacter(LastM1SoundId)
+    else
+        local randomSoundId = playRandomNormalSound()
+        if randomSoundId then playSoundAtCharacter(randomSoundId) end
+    end
+
+    startM1Cooldown()
+end
+
+-- Функция, которая пытается выполнить отложенный последний удар
+local function tryExecutePendingFinal()
+    if not pendingFinalSwing then return false end
+    if not canPlaySound() then return false end
+
+    pendingFinalSwing = false
+    if pendingFinalTimer then
+        task.cancel(pendingFinalTimer)
+        pendingFinalTimer = nil
+    end
+    executeFinalSwing()
+    return true
+end
+
+-- ============ ОБРАБОТЧИК M1 ============
+local function handleM1Action()
+    if not scriptRunning or not canUseM1 or not scytheSystemEnabled or stopAnimationSystem then return false end
+
+    local currentTime = tick()
+
+    if pendingFinalSwing then
+        return false
+    end
+
+    if m1PressCount > 0 and (currentTime - lastM1PressTime) > TIMEOUT_DURATION then
+        resetM1Counter()
+    end
+
+    lastM1PressTime = currentTime
+    m1PressCount = m1PressCount + 1
+
+    if m1PressCount >= M1_PRESS_LIMIT then
+        if canPlaySound() then
+            if currentScytheMode == "knives" then
+                playSoundAtCharacter(LastM1SoundId)
+            else
+                local randomSoundId = playRandomNormalSound()
+                if randomSoundId then playSoundAtCharacter(randomSoundId) end
+            end
+            startM1Cooldown()
+        else
+            pendingFinalSwing = true
+            canUseM1 = false
+            pendingFinalTimer = task.delay(PENDING_TIMEOUT, function()
+                if pendingFinalSwing then
+                    pendingFinalSwing = false
+                    pendingFinalTimer = nil
+                    m1PressCount = 0
+                    canUseM1 = true
+                end
+            end)
+            task.spawn(function()
+                while pendingFinalSwing and scriptRunning do
+                    task.wait(0.1)
+                    if tryExecutePendingFinal() then
+                        break
+                    end
+                end
+            end)
+        end
+    else
+        if canPlaySound() then
+            if currentScytheMode == "knives" then
+                playSoundAtCharacter(M1SoundId)
+            else
+                local randomSoundId = playRandomNormalSound()
+                if randomSoundId then playSoundAtCharacter(randomSoundId) end
+            end
+        end
+        startSwingCooldown()
+        startTimeoutReset()
+    end
+
+    return true
+end
+
+-- ============ ЗАГРУЗКА КОСЫ ============
+local function loadScythe()
+    if not scriptRunning or scytheLoaded or not character or not scytheSystemEnabled or stopAnimationSystem then return end
+    if isSecondPhaseActive() then return end
+    local success = pcall(function() game:GetObjects("rbxassetid://81785185236811")[1].Parent = workspace end)
+    if not success then return end
+    local Scythe = workspace:FindFirstChild("scythe")
+    if not Scythe then
+        for _, obj in pairs(workspace:GetChildren()) do
+            if obj.Name:lower():find("scythe") or obj:IsA("Model") then
+                Scythe = obj
+                break
+            end
+        end
+    end
+    if Scythe then
+        for _, descendant in ipairs(Scythe:GetDescendants()) do
+            if descendant:IsA("MeshPart") then
+                descendant.CanCollide = false
+            elseif descendant:IsA("BasePart") then
+                descendant.Transparency = 0
+            end
+        end
+        Scythe.Parent = character
+        scytheInstance = Scythe
+        local rightArm = character:FindFirstChild("Right Arm") or character:FindFirstChild("RightUpperArm")
+        if scytheInstance and rightArm and scytheInstance:FindFirstChild("Handle") then
+            local Weld1 = Instance.new("Motor6D")
+            Weld1.Name = "HandConnect"
+            Weld1.Parent = rightArm
+            Weld1.Part0 = rightArm
+            Weld1.Part1 = scytheInstance.Handle
+            Weld1.C0 = CFrame.new(0, -1.7, -1) * CFrame.Angles(math.rad(-115), 0, 0)
+            scytheLoaded = true
+            scytheVisible = true
+            local highlight = scytheInstance:FindFirstChild("Highlight")
+            if highlight then
+                highlight.DepthMode = Enum.HighlightDepthMode.Occluded
+            end
+        end
+    end
+end
+
+-- ============ УДАЛЕНИЕ НОЖЕЙ ============
+local function startKnifeRemovalSystem()
+    while scriptRunning do
+        task.wait(0.1)
+        if not player.Character then break end
+        local currentChar = player.Character
+        if currentChar then
+            for _, objName in ipairs({"Knife", "KnifePurple", "Melee", "XHeart", "Overwrite"}) do
+                local obj = currentChar:FindFirstChild(objName)
+                if obj then obj:Destroy() end
+            end
+        end
+    end
+end
+
+-- ============ ФУНКЦИЯ ЗАПУСКА ОБЫЧНОГО IDLE ============
+local function playIdleForCurrentMode()
+    if not Humanoid or stopAnimationSystem then return end
+
+    if currentIdleTrack then
+        currentIdleTrack:Stop()
+        currentIdleTrack:Destroy()
+        currentIdleTrack = nil
+    end
+
+    local idleAnimId = (currentScytheMode == "knives") and idleAnimKnives or idleAnimNormal
+    local idleAnim = Instance.new("Animation")
+    idleAnim.AnimationId = idleAnimId
+    local idleTrack = Humanoid:LoadAnimation(idleAnim)
+    idleTrack.Priority = Enum.AnimationPriority.Idle
+    idleTrack.Looped = true
+    idleTrack:Play()
+    currentIdleTrack = idleTrack
+end
+
+-- ============ ФУНКЦИЯ ЗАПУСКА IDLE ДЛЯ ФАЗЫ 2 ============
+local function playPhase2Idle()
+    if not Humanoid then return end
+    -- Останавливаем все треки
+    for _, track in ipairs(Humanoid:GetPlayingAnimationTracks()) do
+        track:Stop(0)
+        track:Destroy()
+    end
+    -- Загружаем и проигрываем idle phase 2
+    local anim = Instance.new("Animation")
+    anim.AnimationId = idlePhase2
+    local track = Humanoid:LoadAnimation(anim)
+    track.Priority = Enum.AnimationPriority.Idle
+    track.Looped = true
+    track:Play()
+    currentIdleTrack = track
+end
+
+-- ============ ЖЁСТКИЙ ЛОК АНИМАЦИИ (ОСНОВНОЙ ВЗМАХ) ============
+local function playLockedActionAnimation()
+    if not scriptRunning or stopAnimationSystem then return end
+    if not Humanoid or not actionAnimTrack then return end
+    if dataFolder and dataFolder:FindFirstChild("Health") and dataFolder.Health.Value == 0 then
+        stopAnimationSystem = true
+        return
+    end
+
+    animationLocked = true
+
+    for _, track in ipairs(Humanoid:GetPlayingAnimationTracks()) do
+        if track ~= actionAnimTrack then
+            track:Stop(0)
+        end
+    end
+
+    actionAnimTrack:Stop(0)
+    actionAnimTrack:Play(0.05, 1, 1.5)
+
+    if not actionAnimTrack:GetAttribute("LockHooked") then
+        actionAnimTrack:SetAttribute("LockHooked", true)
+
+        Humanoid.AnimationPlayed:Connect(function(track)
+            if animationLocked and track ~= actionAnimTrack then
+                track:Stop(0)
+            end
+        end)
+
+        actionAnimTrack.Stopped:Connect(function()
+            animationLocked = false
+            task.wait(0.1)
+            playIdleForCurrentMode()
+        end)
+    end
+end
+
+-- ============ ФУНКЦИЯ ДЛЯ ПРОИГРЫВАНИЯ АНИМАЦИИ СМЕРТИ ============
+local function playDeathAnimation()
+    if not Humanoid then return end
+
+    disableAnimate()
+
+    for _, track in ipairs(Humanoid:GetPlayingAnimationTracks()) do
+        track:Stop(0)
+        track:Destroy()
+    end
+
+    local anim = Instance.new("Animation")
+    anim.AnimationId = deathAnimId
+    local track = Humanoid:LoadAnimation(anim)
+    track.Priority = Enum.AnimationPriority.Core
+    track:Play()
+    track:AdjustSpeed(0.8)  -- <-- добавляем эту строку
+
+    local conn
+    conn = Humanoid.AnimationPlayed:Connect(function(newTrack)
+        if newTrack ~= track then
+            newTrack:Stop(0)
+            newTrack:Destroy()
+        end
+    end)
+
+    -- Запасной таймер на случай, если Stopped не сработает (например, анимация бесконечная)
+    local timeoutTask = task.delay(30, function()
+        if scytheSystemEnabled then
+            conn:Disconnect()
+            playPhase2Idle()
+            disableScytheSystem()
+        end
+    end)
+
+    track.Stopped:Connect(function()
+        conn:Disconnect()
+        if timeoutTask then task.cancel(timeoutTask) end
+        playPhase2Idle()
+        disableScytheSystem()
+    end)
+end
+
+-- ============ ПЕРЕКЛЮЧЕНИЕ РЕЖИМА С КУЛДАУНОМ ============
+local modeSwitchCooldown = false  -- флаг блокировки переключения
+local modeSwitchTimer = nil
+
+local function switchScytheMode()
+    if not scriptRunning or not scytheSystemEnabled or stopAnimationSystem then return end
+    if isSecondPhaseActive() then return end
+    if modeSwitchCooldown then return end  -- кулдаун активен
+
+    if pendingFinalTimer then
+        task.cancel(pendingFinalTimer)
+        pendingFinalTimer = nil
+    end
+    if pendingFinalSwing then
+        pendingFinalSwing = false
+        m1PressCount = 0
+        canUseM1 = true
+    end
+
+    local cooldownTime = 0
+    if not scytheInstance then
+        -- Первое нажатие (нет косы) -> knives
+        currentScytheMode = "knives"
+        loadScythe()
+        task.spawn(playLockedActionAnimation)
+        cooldownTime = 2  -- Normal -> Knives
+    else
+        if currentScytheMode == "knives" then
+            -- knives -> normal
+            currentScytheMode = "normal"
+            destroyScythe()
+            playIdleForCurrentMode()
+            cooldownTime = 1.7  -- Knives -> Normal
+        else
+            -- normal -> knives
+            currentScytheMode = "knives"
+            loadScythe()
+            task.spawn(playLockedActionAnimation)
+            cooldownTime = 2  -- Normal -> Knives
+        end
+    end
+
+    -- Запускаем кулдаун
+    if cooldownTime > 0 then
+        modeSwitchCooldown = true
+        if modeSwitchTimer then task.cancel(modeSwitchTimer) end
+        modeSwitchTimer = task.delay(cooldownTime, function()
+            modeSwitchCooldown = false
+            modeSwitchTimer = nil
+        end)
+    end
+end
+
+-- ============ МОНИТОРИНГ ЗДОРОВЬЯ ============
+local function startHealthMonitor()
+    while scriptRunning do
+        task.wait(0.1)
+        if not character or not dataFolder then break end
+        local health = dataFolder:FindFirstChild("Health")
+        if health then
+            if health.Value == 0 then
+                stopAnimationSystem = true
+                destroyScythe()
+                if currentIdleTrack then
+                    currentIdleTrack:Stop()
+                    currentIdleTrack:Destroy()
+                    currentIdleTrack = nil
+                end
+                if actionAnimTrack then
+                    actionAnimTrack:Stop()
+                end
+                if Humanoid then
+                    for _, track in ipairs(Humanoid:GetPlayingAnimationTracks()) do
+                        track:Stop(0)
+                        track:Destroy()
+                    end
+                end
+                playDeathAnimation()
+                break
+            end
+        end
+        local secondPhase = dataFolder:FindFirstChild("SecondPhase")
+        if secondPhase and secondPhase.Value == true then
+            stopAnimationSystem = true
+            destroyScythe()
+            if currentIdleTrack then
+                currentIdleTrack:Stop()
+                currentIdleTrack:Destroy()
+                currentIdleTrack = nil
+            end
+            if actionAnimTrack then
+                actionAnimTrack:Stop()
+            end
+            if Humanoid then
+                for _, track in ipairs(Humanoid:GetPlayingAnimationTracks()) do
+                    track:Stop(0)
+                    track:Destroy()
+                end
+            end
+            playDeathAnimation()
+            break
+        end
+    end
+end
+
+-- ============ ИНИЦИАЛИЗАЦИЯ ПЕРСОНАЖА ============
+local function initializeCharacter(newChar)
+    if not scriptRunning then return end
+
+    character = newChar
+    disableAnimate()
+
+    local function waitForHumanoid(char, timeout)
+        local start = tick()
+        while tick() - start < timeout do
+            local hum = char:FindFirstChildOfClass("Humanoid")
+            if hum then return hum end
+            task.wait(0.1)
+        end
+        return nil
+    end
+    Humanoid = waitForHumanoid(character, 2)
+    if not Humanoid then
+        warn("Humanoid не найден за 2 секунды при инициализации персонажа, пропускаем.")
+        return
+    end
+
+    dataFolder = character:WaitForChild("Data")
+
+    stopAnimationSystem = false
+    animationLocked = false
+
+    -- 👇 новые строки для сброса кулдауна переключения режимов
+    if modeSwitchTimer then
+        task.cancel(modeSwitchTimer)
+        modeSwitchTimer = nil
+    end
+    modeSwitchCooldown = false
+    -- 👆
+
+    pendingFinalSwing = false
+    if pendingFinalTimer then
+        task.cancel(pendingFinalTimer)
+        pendingFinalTimer = nil
+    end
+
+    actionAnimTrack = Humanoid:LoadAnimation(actionAnimation)
+    actionAnimTrack.Priority = Enum.AnimationPriority.Core
+    actionAnimTrack:SetAttribute("LockHooked", nil)
+
+    if currentIdleTrack then
+        currentIdleTrack:Stop()
+        currentIdleTrack:Destroy()
+        currentIdleTrack = nil
+    end
+
+    scytheSystemEnabled = true
+    currentScytheMode = "normal"
+    canUseM1 = true
+    m1PressCount = 0
+    lastM1PressTime = 0
+
+    if cooldownTask then task.cancel(cooldownTask) cooldownTask = nil end
+    if timeoutTask then task.cancel(timeoutTask) timeoutTask = nil end
+    if swingCooldownTask then task.cancel(swingCooldownTask) swingCooldownTask = nil end
+
+    destroyScythe()
+    task.spawn(startHealthMonitor)
+    updateNickname()
+end
+
+-- ============ INPUT ============
+local lastEPressTime = 0
+local E_COOLDOWN = 0.5
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if not scriptRunning or gameProcessed then return end
+
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if not canUseM1 or not Humanoid or Humanoid.Health <= 0 then return end
+        if dataFolder then
+            local health = dataFolder:FindFirstChild("Health")
+            if health and health.Value <= 0 then return end
+        end
+        if scytheSystemEnabled then
+            handleM1Action()
+        end
+
+    elseif input.KeyCode == Enum.KeyCode.E then
+        local currentTime = tick()
+        if currentTime - lastEPressTime < E_COOLDOWN then return end
+        lastEPressTime = currentTime
+
+        if not scytheSystemEnabled or isSecondPhaseActive() then return end
+        switchScytheMode()
+    end
+end)
+
+-- ============ СОБЫТИЯ ============
+player.CharacterAdded:Connect(initializeCharacter)
+player.CharacterRemoving:Connect(function()
+    destroyScythe()
+end)
+
+if player.Character then
+    initializeCharacter(player.Character)
+else
+    player.CharacterAdded:Wait()
+    initializeCharacter(player.Character)
+end
+
+task.spawn(startKnifeRemovalSystem)
+updateNickname()
+
+
+
+end,
+})
+
+local Button = Main:CreateButton({
+   Name = "UnderPlayer",
+   Callback = function()
+    game.Players.LocalPlayer.Skins.XTCross.UnderPlayer.Value = true
+	game.Players.LocalPlayer.Skins.XTCross.Value = "UnderPlayer"
+	game.ReplicatedStorage.Char:FireServer("XTCross", "")
+    end,
+})
+local Button = Main:CreateButton({
+   Name = "ReaperTale",
+   Callback = function()
+    game.Players.LocalPlayer.Skins.XTCross.Reapertale.Value = true
+	game.Players.LocalPlayer.Skins.XTCross.Value = "Reapertale"
+	game.ReplicatedStorage.Char:FireServer("XTCross", "")
+    end,
+})
+local Main = Window:CreateTab("Capes and Titles")
+local Capes = Main:CreateSection("Capes")
+
+local Button = Main:CreateButton({
+   Name = "GasterGeneral Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://71897620602260"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Button = Main:CreateButton({
+   Name = "Tridentia's Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://121689991902705"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Button = Main:CreateButton({
+   Name = "OldPolychromia's Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://118767676130184"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Button = Main:CreateButton({
+   Name = "Nightmare Judge's Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://138091795228608"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Button = Main:CreateButton({
+   Name = "Creator's Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://13958501606"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Button = Main:CreateButton({
+   Name = "Artist's Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://13833626575"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Button = Main:CreateButton({
+   Name = "GSW's Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://71469283521550"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Button = Main:CreateButton({
+   Name = "ST's Cape",
+   Callback = function()
+local ModelCape = Instance.new("Model")
+local Weld1 = Instance.new("Weld")
+local Weld2 = Instance.new("ManualWeld")
+local cap = Instance.new("Part")
+local BoneStatic = Instance.new("Part")
+local SpecialMesh = Instance.new("SpecialMesh")
+
+ModelCape.Name = "Cape"
+ModelCape.Parent = game.Players.LocalPlayer.Character
+
+cap.Name = "cap"
+cap.Parent = game.Players.LocalPlayer.Character.Cape
+cap.CanCollide = false
+
+BoneStatic.Parent = game.Players.LocalPlayer.Character.Cape
+BoneStatic.Name = "Cape"
+BoneStatic.Transparency = 1
+BoneStatic.CanCollide = false
+
+SpecialMesh.Parent = game.Players.LocalPlayer.Character.Cape.cap
+SpecialMesh.Name = "ZOVGOIDAPISKISISKINEGRI"
+SpecialMesh.MeshId = "rbxassetid://12003120326"
+SpecialMesh.TextureId = "rbxassetid://94774677787717"
+SpecialMesh.Scale = Vector3.new(0.01, 0.01, 0.01)
+SpecialMesh.Offset = Vector3.new(0.1, -1.1, 0)
+
+Weld1.Name = "Minkal"
+Weld2.Name = "Konserva"
+Weld1.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Parent = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld2.Part0 = game.Players.LocalPlayer.Character.Cape.Cape
+Weld1.Part1 = game.Players.LocalPlayer.Character.Torso
+Weld2.Part1 = game.Players.LocalPlayer.Character.Cape.cap
+Weld2.C0 = CFrame.Angles(math.rad(-0.01), 29.9, 0)  
+   end,
+})
+
+local Titles = Main:CreateSection("Titles")
+
+local Button = Main:CreateButton({
+   Name = "Crimson King",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("CrimsonKing")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+
+local Button = Main:CreateButton({
+   Name = "Comic Judge",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("CJDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Old Comic Judge",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("OLDCJDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Nightmare Judge",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("CJNDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Old Nightmare Judge",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("OLDCJNDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Color Judge",
+   Callback = function()
+		local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("OLDCJNDisplay")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+	
+	local TitleImage = game.Players.LocalPlayer.Character.Head.OLDCJNDisplay.ImageLabel
+	TitleImage.Image = "rbxassetid://139520700109817"
+	local TitleText = game.Players.LocalPlayer.Character.Head.OLDCJNDisplay.Dual
+	TitleText.Text = "Color Judge"
+	
+local transitionTime = 0.5 -- Время перехода между цветами (в секундах)
+
+-- Цвета радуги в правильном порядке
+local rainbowColors = {
+    Color3.fromRGB(255, 0, 0),      -- Красный
+    Color3.fromRGB(255, 127, 0),    -- Оранжевый
+    Color3.fromRGB(255, 255, 0),    -- Желтый
+    Color3.fromRGB(0, 255, 0),      -- Зеленый
+    Color3.fromRGB(0, 0, 255),      -- Синий
+    Color3.fromRGB(75, 0, 130),     -- Индиго
+    Color3.fromRGB(148, 0, 211)     -- Фиолетовый
+}
+
+local currentIndex = 1
+local timePassed = 0
+
+game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
+    timePassed = timePassed + deltaTime
+    
+    if timePassed >= transitionTime then
+        currentIndex = (currentIndex % #rainbowColors) + 1
+        timePassed = 0
+    end
+    
+    -- Плавный переход между текущим и следующим цветом
+    local nextIndex = (currentIndex % #rainbowColors) + 1
+    local progress = timePassed / transitionTime
+    
+    local currentColor = rainbowColors[currentIndex]
+    local nextColor = rainbowColors[nextIndex]
+    
+    TitleText.TextColor3 = Color3.new(
+        currentColor.R + (nextColor.R - currentColor.R) * progress,
+        currentColor.G + (nextColor.G - currentColor.G) * progress,
+        currentColor.B + (nextColor.B - currentColor.B) * progress
+    )
+end)
+clonedTitle.Name = "ColorJDisplay"
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Tester",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("Test")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Developer",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("Dev")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Polychromatic Army",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("poly2")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Polychromia",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("poly1")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Gaster General",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("poly51")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Tournament Winner",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("TourneyWinner")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Player",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("Player")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Old Player",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("OLDPlayer")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Honored One",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("HonoredOne")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Green Slacker",
+   Callback = function()
+	local originalTitle = game.ReplicatedStorage.CharacterTitles:FindFirstChild("GreenSlacker")
+    local clonedTitle = originalTitle:Clone()
+    clonedTitle.Parent = game.Players.LocalPlayer.Character.Head
+end,
+})
+local Chars = Window:CreateTab("Characters")
+local Customs = Chars:CreateSection("Customs")
+
+local Button = Chars:CreateButton({
+   Name = "KJ",
+   Callback = function()
+   game.ReplicatedStorage.Char:FireServer("KJ", "")
+end,
+})
+
+local Button = Chars:CreateButton({
+   Name = "Sukuna",
+   Callback = function()
+   game.ReplicatedStorage.Char:FireServer("Sukuna", "")
+end,
+})
+
+local Main = Window:CreateTab("SomeShit")
+local SomeShit = Main:CreateSection("SomeShit")
+local Button = Main:CreateButton({
+   Name = "Dex",
+   Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/UltraFEmotes/im-bored/refs/heads/main/dexnoapi.lua"))()
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Invisible",
+   Callback = function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()local Players = game:GetService("Players")
+end,
+})
+local Button = Main:CreateButton({
+   Name = "Fly Gui",
+   Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end,
+})
+
+local Button = Main:CreateButton({
+   Name = "Pinos Mrime",
+   Callback = function()
+	local Music = Instance.new("Sound")
+Music.Parent = game.Players.LocalPlayer.Character.Torso
+Music.SoundId = "rbxassetid://14741339189"
+Music.Looped = true
+Music.Volume = 1
+Music.TimePosition = 0
+Music.PlaybackSpeed = 1
+Music.Playing = true
+Music.Name = "JUDGEMENT LMAO"
+end,
+})
+local Main = Window:CreateTab("UpdateLog")
+local SomeShit = Main:CreateSection("UpdateLog")
+local Button = Main:CreateButton({
+   Name = "UpdateLog",
+   Callback = function()
+local function createWindow(title, content)
+    local ScreenGui = Instance.new("ScreenGui")
+    local Frame = Instance.new("Frame")
+    local Title = Instance.new("TextLabel")
+    local TextLabel = Instance.new("TextLabel")
+    local CloseButton = Instance.new("TextButton")
+    local UICorner1 = Instance.new("UICorner")
+    local UICorner2 = Instance.new("UICorner")
+    local UICorner3 = Instance.new("UICorner")
+
+    -- Настройка ScreenGui
+    ScreenGui.Name = "CustomWindow"
+    ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    -- Настройка фрейма
+    Frame.Name = "MainFrame"
+    Frame.Parent = ScreenGui
+    Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+    Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Frame.Size = UDim2.new(0, 450, 0, 350)
+    Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+    UICorner1.Parent = Frame
+    UICorner1.CornerRadius = UDim.new(0, 15)
+
+    -- Заголовок
+    Title.Name = "Title"
+    Title.Parent = Frame
+    Title.Size = UDim2.new(1, 0, 0, 50)
+    Title.BackgroundColor3 = Color3.fromRGB(40, 40, 55)
+    Title.Text = title or "МОЕ ОКНО"
+    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Title.TextSize = 24
+    Title.Font = Enum.Font.GothamBold
+    Title.TextXAlignment = Enum.TextXAlignment.Center
+    UICorner2.Parent = Title
+    UICorner2.CornerRadius = UDim.new(0, 15, 0, 0)
+
+    -- Содержимое
+    TextLabel.Name = "ContentText"
+    TextLabel.Parent = Frame
+    TextLabel.Position = UDim2.new(0, 20, 0, 70)
+    TextLabel.Size = UDim2.new(1, -40, 1, -140)
+    TextLabel.BackgroundTransparency = 1
+    TextLabel.Text = content or "Введите ваш текст здесь..."
+    TextLabel.TextColor3 = Color3.fromRGB(230, 230, 230)
+    TextLabel.TextSize = 16
+    TextLabel.Font = Enum.Font.Gotham
+    TextLabel.TextWrapped = true
+    TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+    TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+    TextLabel.RichText = true
+
+    -- Кнопка закрытия
+    CloseButton.Name = "CloseButton"
+    CloseButton.Parent = Frame
+    CloseButton.AnchorPoint = Vector2.new(0.5, 1)
+    CloseButton.Position = UDim2.new(0.5, 0, 1, -20)
+    CloseButton.Size = UDim2.new(0, 140, 0, 45)
+    CloseButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+    CloseButton.Text = "Close"
+    CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    CloseButton.TextSize = 18
+    CloseButton.Font = Enum.Font.GothamBold
+    UICorner3.Parent = CloseButton
+    UICorner3.CornerRadius = UDim.new(0, 10)
+
+    -- Эффекты при наведении на кнопку
+    CloseButton.MouseEnter:Connect(function()
+        CloseButton.BackgroundColor3 = Color3.fromRGB(220, 70, 70)
+    end)
+    
+    CloseButton.MouseLeave:Connect(function()
+        CloseButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+    end)
+
+    -- Функция закрытия
+    CloseButton.MouseButton1Click:Connect(function()
+        ScreenGui:Destroy()
+    end)
+
+    return ScreenGui
+end
+
+-- Использование функции:
+local myWindow = createWindow(
+    "UPDATE LOG",
+    [[
+    Welcome to the update log. You can read there any changes that 
+	I have made for gui.
+    
+
+    -Color sans got new Title and now his Chatting messages is colorful.
+
+
+	Thanks for admiting, i love making this gui for now.
+    ]]
+)
+   end,
+})
+
+
+if game.Players.LocalPlayer.UserId == 9955016686 or 9958034632 then
+    local Main = Window:CreateTab("WhiteList")
+    local SomeShit = Main:CreateSection("AddedByIskra")
+    local Button = Main:CreateButton({
+        Name = "DUSTDUST",
+        Callback = function()
+            game.ReplicatedStorage.Char:FireServer("XTCross", "")
+wait(1)
+game:GetObjects("rbxassetid://14362503287")[1].Parent = game.Workspace
+local DD = workspace.Dustdust
+local eye = DD.Head.eyeleft:Clone()
+eye.Parent = game.Players.LocalPlayer.Character.Head
+local ERROR = DD.Torso.ERROR:Clone()
+ERROR.Parent = game.Players.LocalPlayer.Character.Torso
+local Particle = DD.Torso.ParticleEmitter:Clone()
+Particle.Parent = game.Players.LocalPlayer.Character.Torso
+DD:Destroy()
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local display = character:WaitForChild("Head"):WaitForChild("Display"):WaitForChild("Frame")
+local nickname = display:WaitForChild("TextLabel")
+local healthBar = display.Health:WaitForChild("Bar")
+
+local colors = {
+    Color3.fromRGB(255, 0, 0),
+    Color3.fromRGB(28, 28, 28)
+}
+
+local currentIndex = 1
+local timePassed = 0
+local transitionTime = 0.5
+local totalColors = #colors
+
+nickname.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
+local function getNextIndex(index)
+    return (index % totalColors) + 1
+end
+
+game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
+    timePassed = timePassed + deltaTime
+    
+    if timePassed >= transitionTime then
+        currentIndex = getNextIndex(currentIndex)
+        timePassed = 0
+    end
+    
+    local progress = timePassed / transitionTime
+    progress = math.clamp(progress, 0, 1)
+    
+    local nextIndex = getNextIndex(currentIndex)
+    local currentColor = colors[currentIndex]
+    local nextColor = colors[nextIndex]
+    
+    local newColor = Color3.new(
+        currentColor.R + (nextColor.R - currentColor.R) * progress,
+        currentColor.G + (nextColor.G - currentColor.G) * progress,
+        currentColor.B + (nextColor.B - currentColor.B) * progress
+    )
+    
+    nickname.TextColor3 = newColor
+    healthBar.BackgroundColor3 = newColor
+end)
+        end,
+    })
+	local Button = Main:CreateButton({
+   Name = "SuperC00lConsole",
+   Callback = function()
+	local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local TextService = game:GetService("TextService")
+local RunService = game:GetService("RunService")
+local HttpService = game:GetService("HttpService")
+
+local localPlayer = Players.LocalPlayer
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ConsoleGUI"
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "ConsoleWindow"
+MainFrame.Size = UDim2.new(0, 500, 0, 400)
+MainFrame.Position = UDim2.new(0.5, -250, 0.5, -200)
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BorderSizePixel = 2
+MainFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
+MainFrame.Active = true
+MainFrame.Draggable = true
+MainFrame.Parent = ScreenGui
+
+local TitleBar = Instance.new("Frame")
+TitleBar.Name = "TitleBar"
+TitleBar.Size = UDim2.new(1, 0, 0, 30)
+TitleBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TitleBar.BorderSizePixel = 0
+TitleBar.Parent = MainFrame
+
+local TitleText = Instance.new("TextLabel")
+TitleText.Name = "Title"
+TitleText.Size = UDim2.new(1, -60, 1, 0)
+TitleText.Position = UDim2.new(0, 10, 0, 0)
+TitleText.BackgroundTransparency = 1
+TitleText.Text = "Console by Iskra"
+TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleText.TextXAlignment = Enum.TextXAlignment.Left
+TitleText.Font = Enum.Font.SourceSansBold
+TitleText.TextSize = 18
+TitleText.Parent = TitleBar
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Name = "CloseButton"
+CloseButton.Size = UDim2.new(0, 30, 0, 30)
+CloseButton.Position = UDim2.new(1, -30, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+CloseButton.BorderSizePixel = 0
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.TextSize = 18
+CloseButton.Parent = TitleBar
+
+local ConsoleOutput = Instance.new("ScrollingFrame")
+ConsoleOutput.Name = "Output"
+ConsoleOutput.Size = UDim2.new(1, -20, 1, -90)
+ConsoleOutput.Position = UDim2.new(0, 10, 0, 40)
+ConsoleOutput.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ConsoleOutput.BorderSizePixel = 1
+ConsoleOutput.BorderColor3 = Color3.fromRGB(50, 50, 50)
+ConsoleOutput.ScrollBarThickness = 8
+ConsoleOutput.AutomaticCanvasSize = Enum.AutomaticSize.Y
+ConsoleOutput.CanvasSize = UDim2.new(0, 0, 0, 0)
+ConsoleOutput.Parent = MainFrame
+
+local OutputContainer = Instance.new("Frame")
+OutputContainer.Name = "OutputContainer"
+OutputContainer.Size = UDim2.new(1, 0, 0, 0)
+OutputContainer.BackgroundTransparency = 1
+OutputContainer.Parent = ConsoleOutput
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Padding = UDim.new(0, 5)
+UIListLayout.Parent = OutputContainer
+
+local CommandInput = Instance.new("TextBox")
+CommandInput.Name = "Input"
+CommandInput.Size = UDim2.new(1, -20, 0, 30)
+CommandInput.Position = UDim2.new(0, 10, 1, -50)
+CommandInput.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CommandInput.BorderSizePixel = 1
+CommandInput.BorderColor3 = Color3.fromRGB(70, 70, 70)
+CommandInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+CommandInput.Text = ""
+CommandInput.PlaceholderText = "Write command..."
+CommandInput.Font = Enum.Font.SourceSans
+CommandInput.TextSize = 16
+CommandInput.TextXAlignment = Enum.TextXAlignment.Left
+CommandInput.ClearTextOnFocus = false
+CommandInput.Parent = MainFrame
+
+local SendButton = Instance.new("TextButton")
+SendButton.Name = "SendButton"
+SendButton.Size = UDim2.new(0, 80, 0, 30)
+SendButton.Position = UDim2.new(1, -90, 1, -50)
+SendButton.BackgroundColor3 = Color3.fromRGB(50, 100, 200)
+SendButton.BorderSizePixel = 0
+SendButton.Text = "Execute"
+SendButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SendButton.Font = Enum.Font.SourceSansBold
+SendButton.TextSize = 16
+SendButton.Parent = MainFrame
+
+local StatusBar = Instance.new("TextLabel")
+StatusBar.Name = "Status"
+StatusBar.Size = UDim2.new(1, -20, 0, 20)
+StatusBar.Position = UDim2.new(0, 10, 1, -70)
+StatusBar.BackgroundTransparency = 1
+StatusBar.Text = "Ready"
+StatusBar.TextColor3 = Color3.fromRGB(200, 200, 200)
+StatusBar.TextXAlignment = Enum.TextXAlignment.Left
+StatusBar.Font = Enum.Font.SourceSans
+StatusBar.TextSize = 14
+StatusBar.Parent = MainFrame
+
+ScreenGui.Parent = localPlayer:WaitForChild("PlayerGui")
+
+local commands = {}
+
+local commandHistory = {}
+local historyIndex = 0
+
+local function addConsoleLine(text, color)
+	color = color or Color3.fromRGB(255, 255, 255)
+	
+	local textLabel = Instance.new("TextLabel")
+	textLabel.Name = "LogLine_" .. HttpService:GenerateGUID(false)
+	textLabel.Size = UDim2.new(1, 0, 0, 0)
+	textLabel.BackgroundTransparency = 1
+	textLabel.Text = "> " .. text
+	textLabel.TextColor3 = color
+	textLabel.TextXAlignment = Enum.TextXAlignment.Left
+	textLabel.TextYAlignment = Enum.TextYAlignment.Top
+	textLabel.Font = Enum.Font.RobotoMono
+	textLabel.TextSize = 14
+	textLabel.TextWrapped = true
+	textLabel.AutomaticSize = Enum.AutomaticSize.Y
+	textLabel.Parent = OutputContainer
+	
+	RunService.Heartbeat:Wait()
+	ConsoleOutput.CanvasPosition = Vector2.new(0, OutputContainer.AbsoluteSize.Y)
+	
+	if #OutputContainer:GetChildren() > 100 then
+		local children = OutputContainer:GetChildren()
+		for i = 1, #children - 100 do
+			if children[i]:IsA("TextLabel") then
+				children[i]:Destroy()
+			end
+		end
+	end
+end
+
+local function executeCommand(cmd)
+	table.insert(commandHistory, cmd)
+	historyIndex = #commandHistory + 1
+	
+	addConsoleLine(cmd, Color3.fromRGB(100, 200, 255))
+	
+	local args = {}
+	for arg in cmd:gmatch("%S+") do
+		table.insert(args, arg)
+	end
+	
+	if #args == 0 then return end
+	
+	local commandName = args[1]:lower()
+	table.remove(args, 1)
+	
+	if commandName == "clear" or commandName == "cls" then
+		for _, child in pairs(OutputContainer:GetChildren()) do
+			if child:IsA("TextLabel") then
+				child:Destroy()
+			end
+		end
+		addConsoleLine("Консоль очищена", Color3.fromRGB(100, 255, 100))
+		
+	elseif commandName == "help" then
+		addConsoleLine("Доступные команды:", Color3.fromRGB(255, 255, 100))
+		addConsoleLine("  clear/cls - Clear console", Color3.fromRGB(200, 200, 200))
+		addConsoleLine("  help - Shows commands", Color3.fromRGB(200, 200, 200))
+		addConsoleLine("  echo [text] - Print anything", Color3.fromRGB(200, 200, 200))
+		addConsoleLine("  fps - Shows FPS", Color3.fromRGB(200, 200, 200))
+		addConsoleLine("  ping - Checks your ping", Color3.fromRGB(200, 200, 200))
+		addConsoleLine("  exec [luacode] - Write your super cool code and execute it", Color3.fromRGB(200, 200, 200))
+		addConsoleLine("  gui [show/hide] - Control gui(rn only hide and show)", Color3.fromRGB(200, 200, 200))
+		
+	elseif commandName == "echo" then
+		local text = table.concat(args, " ")
+		addConsoleLine(text, Color3.fromRGB(255, 200, 100))
+		
+	elseif commandName == "fps" then
+		local fps = 1 / RunService.RenderStepped:Wait()
+		addConsoleLine("FPS: " .. math.floor(fps), Color3.fromRGB(100, 255, 100))
+		
+	elseif commandName == "ping" then
+		local startTime = tick()
+		local endTime = tick()
+		local ping = math.floor((endTime - startTime) * 1000)
+		addConsoleLine("Ping: " .. ping .. "ms", Color3.fromRGB(100, 255, 100))
+		
+	elseif commandName == "exec" then
+		local code = table.concat(args, " ")
+		local success, result = pcall(function()
+			return loadstring(code)()
+		end)
+		
+		if success then
+			addConsoleLine("Result: " .. tostring(result), Color3.fromRGB(100, 255, 100))
+		else
+			addConsoleLine("Error: " .. tostring(result), Color3.fromRGB(255, 100, 100))
+		end
+		
+	elseif commandName == "gui" then
+		if args[1] == "hide" then
+			MainFrame.Visible = false
+			addConsoleLine("GUI hide", Color3.fromRGB(100, 255, 100))
+		elseif args[1] == "show" then
+			MainFrame.Visible = true
+			addConsoleLine("GUI show", Color3.fromRGB(100, 255, 100))
+		else
+			addConsoleLine("Use: gui [show/hide]", Color3.fromRGB(255, 100, 100))
+		end
+		
+	else
+		if commands[commandName] then
+			local success, errorMsg = pcall(function()
+				commands[commandName](args)
+			end)
+			
+			if not success then
+				addConsoleLine("Callback error: " .. errorMsg, Color3.fromRGB(255, 100, 100))
+			end
+		else
+			addConsoleLine("Unknowm command: " .. commandName, Color3.fromRGB(255, 100, 100))
+			addConsoleLine("Write 'help' for show commands", Color3.fromRGB(255, 200, 100))
+		end
+	end
+	
+	StatusBar.Text = "Command executed: " .. commandName
+end
+
+function registerCommand(name, func, description)
+	commands[name:lower()] = func
+	if description then
+		addConsoleLine("Command registered: " .. name .. " - " .. description, Color3.fromRGB(100, 255, 100))
+	end
+end
+
+SendButton.MouseButton1Click:Connect(function()
+	local cmd = CommandInput.Text
+	if cmd and cmd ~= "" then
+		executeCommand(cmd)
+		CommandInput.Text = ""
+	end
+	CommandInput:CaptureFocus()
+end)
+
+CommandInput.FocusLost:Connect(function(enterPressed)
+	if enterPressed then
+		local cmd = CommandInput.Text
+		if cmd and cmd ~= "" then
+			executeCommand(cmd)
+			CommandInput.Text = ""
+		end
+	end
+end)
+
+CloseButton.MouseButton1Click:Connect(function()
+	MainFrame.Visible = not MainFrame.Visible
+	if MainFrame.Visible then
+		CloseButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+	else
+		CloseButton.BackgroundColor3 = Color3.fromRGB(50, 150, 50)
+	end
+end)
+
+CommandInput.Focused:Connect(function()
+	historyIndex = #commandHistory + 1
+end)
+
+CommandInput.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Up then
+		if historyIndex > 1 then
+			historyIndex = historyIndex - 1
+			CommandInput.Text = commandHistory[historyIndex] or ""
+		end
+	elseif input.KeyCode == Enum.KeyCode.Down then
+		if historyIndex < #commandHistory then
+			historyIndex = historyIndex + 1
+			CommandInput.Text = commandHistory[historyIndex] or ""
+		elseif historyIndex == #commandHistory then
+			historyIndex = #commandHistory + 1
+			CommandInput.Text = ""
+		end
+	end
+end)
+
+local originalPrint = print
+print = function(...)
+	originalPrint(...)
+	
+	local args = {...}
+	local message = ""
+	for i, arg in ipairs(args) do
+		message = message .. tostring(arg)
+		if i < #args then
+			message = message .. "\t"
+		end
+	end
+	
+	addConsoleLine(message, Color3.fromRGB(255, 255, 255))
+end
+
+local originalWarn = warn
+warn = function(...)
+	originalWarn(...)
+	
+	local args = {...}
+	local message = ""
+	for i, arg in ipairs(args) do
+		message = message .. tostring(arg)
+		if i < #args then
+			message = message .. "\t"
+		end
+	end
+	
+	addConsoleLine("WARN: " .. message, Color3.fromRGB(255, 200, 50))
+end
+
+local originalError = error
+error = function(message, level)
+	originalError(message, level)
+	addConsoleLine("ERROR: " .. message, Color3.fromRGB(255, 50, 50))
+end
+
+registerCommand("time", function(args)
+	local currentTime = os.date("%H:%M:%S")
+	addConsoleLine("Current time is: " .. currentTime, Color3.fromRGB(100, 255, 100))
+end, "Show current time")
+
+registerCommand("player", function(args)
+	addConsoleLine("Name of player: " .. localPlayer.Name, Color3.fromRGB(200, 200, 255))
+	addConsoleLine("ID: " .. tostring(localPlayer.UserId), Color3.fromRGB(200, 200, 255))
+end, "Info about player")
+
+addConsoleLine("Console executed! Press F7 for keybin(hide or show)", Color3.fromRGB(100, 255, 100))
+addConsoleLine("Write 'help' for show commands", Color3.fromRGB(100, 255, 100))
+CommandInput:CaptureFocus()
+end,
+})
+local Button = Main:CreateButton({
+        Name = "NewCape",
+        Callback = function()
+
+
+-- Плащ с физикой (Verlet) – запускать отдельно от GBlack
+local player = game.Players.LocalPlayer
+local runService = game:GetService("RunService")
+
+-- Параметры физики (подбери под свой вкус)
+local GRAVITY = Vector3.new(0, -15, 0)      -- сила тяжести (чем больше, тем быстрее падает)
+local DAMPING = 0.97                         -- затухание колебаний (0.95-0.99)
+local WIND_FORCE = 0.15                       -- влияние движения на ткань (0.1-0.3)
+local ITERATIONS = 5                           -- число итераций коррекции (больше = жёстче)
+
+-- Ссылки на части
+local capeModel = nil       -- будет заполнено после загрузки
+local bones = {}            -- таблица с данными костей
+local physicsConnection = nil
+
+-- Функция загрузки плаща из репозитория
+local function loadCape()
+    local success, result = pcall(function()
+        return game:GetObjects("rbxassetid://80085026797086")[1]
+    end)
+    if not success or not result then
+        warn("Не удалось загрузить плащ")
+        return nil
+    end
+    result.Parent = workspace
+    return result
+end
+
+-- Функция крепления плаща к персонажу
+local function attachCape(character, capeRoot)
+    local Dummy = workspace:WaitForChild("TestDummy")
+    if not Dummy then
+        warn("TestDummy не найден!")
+        return false
+    end
+
+    local Cape = Dummy:FindFirstChild("Cape")
+    if not Cape then
+        warn("Cape не найден в TestDummy!")
+        return false
+    end
+
+    Cape = Cape:Clone()
+    Cape.Parent = character
+
+    local capePart = Cape:WaitForChild("Cape")
+    local capPart = Cape:WaitForChild("cap")
+
+    capePart.Anchored = false
+    capePart.CanCollide = false
+    if capPart then
+        capPart.Anchored = false
+    end
+
+    -- Удаляем оригинальный дамми
+    if Dummy and Dummy.Parent == workspace then
+        Dummy:Destroy()
+    end
+
+    -- Поиск торса
+    local torso = character:FindFirstChild("Torso") or character:FindFirstChild("UpperTorso")
+    if not torso then
+        warn("Торс не найден!")
+        Cape:Destroy()
+        return false
+    end
+
+    -- Сварки (подбери позицию под свою модель)
+    local Weld1 = Instance.new("Weld")
+    local Weld2 = Instance.new("ManualWeld")
+    Weld1.Name = "Minkal"
+    Weld2.Name = "Konserva"
+    Weld1.Parent = capPart
+    Weld2.Parent = capPart
+    Weld1.Part0 = capePart
+    Weld2.Part0 = capePart
+    Weld1.Part1 = torso
+    Weld2.Part1 = capPart
+
+    local position = Vector3.new(-0.15, 1, -0.05)
+    Weld1.C0 = CFrame.new(position) * CFrame.fromMatrix(
+        Vector3.new(0,0,0),
+        Vector3.new(0.16439898312091827, 0, -50),
+        Vector3.new(0,1,0),
+        Vector3.new(50, 0, 0.16439898312091827)
+    )
+    Weld2.C0 = CFrame.Angles(math.rad(-0.01), math.rad(29.9), 0)
+
+    -- Скрываем все кости (они будут невидимыми, но мы будем их двигать)
+    local function hideBones(part)
+        if part and part:IsA("BasePart") then
+            part.Visible = false
+        end
+    end
+
+    local Bone = capePart:FindFirstChild("Bone")
+    if not Bone then
+        warn("Кость Bone не найдена!")
+        return false
+    end
+    hideBones(Bone)
+
+    -- Рекурсивный сбор всех костей
+    local function collectBones(parentPart, parentBone)
+        for _, child in ipairs(parentPart:GetChildren()) do
+            if child:IsA("BasePart") then
+                hideBones(child)
+                bones[child] = {
+                    part = child,
+                    parent = parentBone,
+                    localPos = parentBone and (child.Position - parentBone.Position) or Vector3.new(0,0,0),
+                    pos = child.Position,
+                    prevPos = child.Position,
+                }
+                collectBones(child, child)
+            end
+        end
+    end
+    collectBones(Bone, Bone)
+
+    return true
+end
+
+-- Функция запуска физики
+local function startPhysics(torso)
+    if physicsConnection then
+        physicsConnection:Disconnect()
+        physicsConnection = nil
+    end
+
+    physicsConnection = runService.RenderStepped:Connect(function(dt)
+        local character = player.Character
+        if not character or not torso or not torso.Parent then
+            -- если персонаж исчез, отключаем физику
+            physicsConnection:Disconnect()
+            physicsConnection = nil
+            return
+        end
+
+        local velocity = torso.Velocity
+        local speed = velocity.Magnitude
+
+        -- Шаг 1: обновление позиций по Verlet
+        for part, data in pairs(bones) do
+            if not part.Parent then continue end
+
+            local vel = (data.pos - data.prevPos) * (1 - DAMPING)
+            local newPos = data.pos + vel + GRAVITY * dt * dt
+
+            -- Ветер от движения
+            if speed > 0.5 then
+                local windDir = velocity.Unit
+                local windStrength = math.min(speed / 20, 1.5) * WIND_FORCE
+                newPos = newPos + windDir * windStrength * dt
+            end
+
+            data.prevPos = data.pos
+            data.pos = newPos
+        end
+
+        -- Шаг 2: коррекция расстояний между костями
+        for _ = 1, ITERATIONS do
+            for part, data in pairs(bones) do
+                if data.parent then
+                    local parentPos = data.parent.Position
+                    local dir = (data.pos - parentPos).Unit
+                    local desiredLength = (data.localPos).Magnitude
+                    local currentLength = (data.pos - parentPos).Magnitude
+
+                    if currentLength > 0.01 then
+                        local correction = (desiredLength - currentLength) * 0.5
+                        data.pos = data.pos + dir * correction
+                        -- родитель не двигаем (он приварен к торсу)
+                    end
+                end
+            end
+        end
+
+        -- Шаг 3: применение новых позиций
+        for part, data in pairs(bones) do
+            local rot = part.CFrame.Rotation
+            part.CFrame = CFrame.new(data.pos) * rot
+        end
+    end)
+end
+
+-- Основная функция: при появлении персонажа создаём плащ
+local function onCharacterAdded(char)
+    -- Ждём Humanoid и торс
+    local hum = char:WaitForChild("Humanoid")
+    local torso = char:FindFirstChild("Torso") or char:FindFirstChild("UpperTorso")
+    if not torso then
+        torso = char:WaitForChild("UpperTorso") or char:WaitForChild("Torso")
+    end
+
+    -- Загружаем модель плаща (если ещё не загружена)
+    if not capeModel then
+        capeModel = loadCape()
+        if not capeModel then return end
+    end
+
+    -- Прикрепляем плащ
+    local success = attachCape(char, capeModel)
+    if not success then return end
+
+    -- Запускаем физику
+    startPhysics(torso)
+end
+
+-- Если персонаж уже есть – обрабатываем
+if player.Character then
+    onCharacterAdded(player.Character)
+end
+
+-- Подписываемся на появление нового персонажа
+player.CharacterAdded:Connect(onCharacterAdded)
+
+        end,
+    })
+end
+end
